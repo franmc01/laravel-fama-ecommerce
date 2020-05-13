@@ -53,9 +53,21 @@ class InformacionController extends Controller
         $a=Categoria::all()->count();
         $b=Producto::all()->count();
         $c=SubCategoria::all()->count();
+        $d=Producto::onlyTrashed()->count();
 
-        return view('Secciones\dashboard', compact('a','b','c'));
+        return view('Secciones\dashboard', compact('a','b','c','d'));
 
+    }
+
+    public function eliminados(){
+        $datos = Producto::onlyTrashed()->get();
+        return view('Secciones\eliminados', compact('datos'));
+    }
+
+    public function restaurar($id){
+        Producto::withTrashed()->find($id)
+            ->restore();
+        return back()->with('success', 'El producto ha sido restaurardo correctamente');
     }
 
 }

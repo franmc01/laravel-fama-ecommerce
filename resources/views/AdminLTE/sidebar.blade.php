@@ -37,4 +37,24 @@
         <p>Información de la página</p>
         </a>
     </li>
+
+    <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-trash"></i>
+            <p>Papelera de reciclaje<i class="right fas fa-angle-left"></i> </p>
+        </a>
+
+        <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+                <a href="{{ route('productos.eliminados') }}" class="nav-link">
+                    <i class="fa fa-clipboard-list nav-icon"></i>
+                    <p>Productos eliminados</p>
+                </a>
+            </li>
+
+        </ul>
+    </li>
+
+
 </ul>

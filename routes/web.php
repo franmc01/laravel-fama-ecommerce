@@ -21,6 +21,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/fotos/{foto}', 'FiltradoController@eliminar_foto')->name('fotos.destroy');
     Route::get('/informacion-pagina', 'InformacionController@editar_info')->name('info.edit');
     Route::put('/informacion-pagina/actualizar/{id}', 'InformacionController@update_info')->name('info.update');
+    Route::get('/productos-eliminados', 'InformacionController@eliminados')->name('productos.eliminados');
+    Route::get('/restaurar/{x}', 'InformacionController@restaurar')->name('restaurar');
 });
 
 Route::get('/', 'TiendaController@index')->name('inicio.tienda');

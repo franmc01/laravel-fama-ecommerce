@@ -23,9 +23,9 @@
 <div class="container-fluid">
     <!-- Small boxes (Stat box) -->
     <div class="row">
-        <div class="col-lg-4 col-6">
+        <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="small-box bg-warning">
                 <div class="inner">
                     <h3>{{ $b }}</h3>
 
@@ -38,9 +38,9 @@
             </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-4 col-6">
+        <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="small-box bg-info">
                 <div class="inner">
                     <h3>{{ $a }}</h3>
 
@@ -53,9 +53,9 @@
             </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-4 col-6">
+        <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-success">
                 <div class="inner">
                     <h3>{{ $c }}</h3>
 
@@ -65,6 +65,21 @@
                     <i class=" ion ion-android-bookmark"></i>
                 </div>
                 <a href="{{ route('productos.index') }}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>{{ $d }}</h3>
+
+                    <p>Productos eliminados</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-trash-outline"></i>
+                </div>
+                <a href="{{ route('productos.eliminados') }}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
