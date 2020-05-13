@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Categoria;
 use App\Foto;
 use App\Producto;
-use Illuminate\Http\Request;
+use App\Categoria;
 use App\Informacion;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FiltradoController extends Controller
 {
@@ -24,6 +25,7 @@ class FiltradoController extends Controller
 
     public function eliminar_foto( Foto $foto)
     {
+        Storage::delete($foto->url);
         $foto->delete();
         return back()->with('success', 'La fotografía del producto ha sido eliminada correctamente');
     }

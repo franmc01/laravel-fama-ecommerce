@@ -8,6 +8,8 @@ use App\Producto;
 use App\SubCategoria;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class ProductoController extends Controller
 {
@@ -43,8 +45,15 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[ 'nombre'=> 'required', 'descripcion'=> 'required', 'codigo'=> 'required', 'fecha'=> 'required',
-                                   'categoria'=> 'required','marca'=> 'required', 'imagenes' => 'required', 'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048' ]);
+        $this->validate($request,[ 'nombre'=> 'required',
+                                   'descripcion'=> 'required',
+                                   'codigo'=> 'required',
+                                   'fecha'=> 'required',
+                                   'categoria'=> 'required',
+                                   'marca'=> 'required',
+                                   'imagenes' => 'required',
+                                   'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+                                ]);
         $producto=new Producto();
         $producto->nombre_producto=$request->nombre;
         $producto->descripcion=$request->descripcion;
@@ -58,19 +67,11 @@ class ProductoController extends Controller
             $fotos->producto_id=$producto->id;
             $fotos->url=$foto->store('product_img');
             $fotos->save();
+            $optima = Image::make(Storage::get($fotos->url));
+            $optima->widen(600)->encode();
+            Storage::put($fotos->url, (string) $optima);
         }
         return back()->with('success', 'El producto ha sido registrado correctamente');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Producto  $producto
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Producto $producto)
-    {
-        //
     }
 
     /**
@@ -96,8 +97,13 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        $this->validate($request,[ 'nombre'=> 'required', 'descripcion'=> 'required', 'codigo'=> 'required', 'fecha'=> 'required',
-                                   'categoria'=> 'required',    'marca'=> 'required', 'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        $this->validate($request,[ 'nombre'=> 'required',
+                                   'descripcion'=> 'required',
+                                   'codigo'=> 'required',
+                                   'fecha'=> 'required',
+                                   'categoria'=> 'required',
+                                   'marca'=> 'required',
+                                   'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
                                 ]);
         if ($request->file('imagenes')) {
             foreach ($request->file('imagenes') as $foto) {
@@ -105,6 +111,9 @@ class ProductoController extends Controller
                 $fotos->producto_id = $producto->id;
                 $fotos->url = $foto->store('product_img');
                 $fotos->save();
+                $optima = Image::make(Storage::get($fotos->url));
+                $optima->widen(600)->encode();
+                Storage::put($fotos->url, (string) $optima);
             }
         }
         $producto->nombre_producto=$request->nombre;
