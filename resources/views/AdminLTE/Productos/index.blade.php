@@ -46,6 +46,7 @@
                   <th>Fecha de publicación</th>
                   <th>Categoría del producto</th>
                   <th>Marca del producto</th>
+                  <th>Precio del producto</th>
                   <th>Editar</th>
                   <th>Eliminar</th>
                 </tr>
@@ -60,6 +61,7 @@
                             <td>{{ $item->publicado }}</td>
                             <td>{{ $item->categoria->nombre_categoria }}</td>
                             <td>{{ $item->subcategoria->nombre_sub }}</td>
+                            <td>{{ $item->precio }}</td>
                             <td>
                                 <a name="" id="" class="btn btn-warning" href="{{ route('productos.edit', $item ) }}" role="button">Editar</a>
                             </td>

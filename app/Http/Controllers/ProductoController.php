@@ -51,6 +51,7 @@ class ProductoController extends Controller
                                    'fecha'=> 'required',
                                    'categoria'=> 'required',
                                    'marca'=> 'required',
+                                   'precio'=> 'required',
                                    'imagenes' => 'required',
                                    'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
                                 ]);
@@ -58,6 +59,7 @@ class ProductoController extends Controller
         $producto->nombre_producto=$request->nombre;
         $producto->descripcion=$request->descripcion;
         $producto->codigo_unico=$request->codigo;
+        $producto->precio=$request->precio;
         $producto->publicado=Carbon::parse($request->fecha);
         $producto->categoria_id=Categoria::find($cat=$request->categoria) ? $cat : Categoria::create(['nombre_categoria' => $cat])->id;
         $producto->subcategoria_id=SubCategoria::find($sub=$request->marca) ? $sub : SubCategoria::create(['nombre_sub' => $sub])->id;
@@ -103,6 +105,7 @@ class ProductoController extends Controller
                                    'fecha'=> 'required',
                                    'categoria'=> 'required',
                                    'marca'=> 'required',
+                                    'precio' => 'required',
                                    'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
                                 ]);
         if ($request->file('imagenes')) {
@@ -119,6 +122,7 @@ class ProductoController extends Controller
         $producto->nombre_producto=$request->nombre;
         $producto->descripcion=$request->descripcion;
         $producto->codigo_unico=$request->codigo;
+        $producto->precio = $request->precio;
         $producto->publicado=Carbon::parse($request->fecha);
         $producto->categoria_id=Categoria::find($cat=$request->categoria) ? $cat : Categoria::create(['nombre_categoria' => $cat])->id;
         $producto->subcategoria_id=SubCategoria::find($sub=$request->marca) ? $sub : SubCategoria::create(['nombre_sub' => $sub])->id;

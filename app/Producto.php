@@ -11,6 +11,8 @@ class Producto extends Model
 
     protected $guarded = [];
 
+    public $timestamps = false;
+
     public function getRouteKeyName(){ return 'nombre_producto'; }
 
     public function categoria() { return $this->belongsTo('App\Categoria'); }

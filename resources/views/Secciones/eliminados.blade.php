@@ -37,6 +37,7 @@
                                 <th>Fecha de publicación</th>
                                 <th>Categoría del producto</th>
                                 <th>Marca del producto</th>
+                                <th>Precio del producto</th>
                                 <th>Acción</th>
                             </tr>
                         </thead>
@@ -50,6 +51,7 @@
                                 <td>{{ $item->publicado }}</td>
                                 <td>{{ $item->categoria->nombre_categoria }}</td>
                                 <td>{{ $item->subcategoria->nombre_sub }}</td>
+                                <td>{{ $item->precio }}</td>
                                 <td>
                                     <a class="btn btn-info" href="{{ route('restaurar',$item->id) }}">Restaurar</a>
                                 </td>

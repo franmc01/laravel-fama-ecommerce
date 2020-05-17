@@ -105,7 +105,6 @@
                           @enderror
                       </div>
 
-                      <br>
                       <div class="bootstrap-timepicker mb-1">
                         <div class="form-group">
                             <label>Fecha de publicación:</label>
@@ -121,7 +120,14 @@
                         </div>
                         <!-- /.form group -->
                       </div>
-                      <br>
+
+                        <div class="form-group">
+                            <label for="">Precio del producto</label>
+                            <input type="number" class="form-control @error('precio') is-invalid @enderror" name="precio" id="" value="{{ old('precio',$editado->precio) }}" placeholder="Ingrese el precio del producto">
+                            @error('precio')
+                            <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
+                            @enderror
+                        </div>
 
 
                       <button type="submit" class="btn btn-primary btn-block">Actualizar producto</button>

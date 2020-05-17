@@ -19,11 +19,11 @@ class CreateProductosTable extends Migration
             $table->string('descripcion', 255);
             $table->string('codigo_unico');
             $table->date('publicado');
+            $table->decimal('precio');
             $table->unsignedBigInteger('categoria_id');
             $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->unsignedBigInteger('subcategoria_id');
             $table->foreign('subcategoria_id')->references('id')->on('sub_categorias');
-            $table->timestamps();
             $table->softDeletes();
         });
     }
