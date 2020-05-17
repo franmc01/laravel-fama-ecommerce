@@ -6,7 +6,7 @@ Colors:
 	Body 		: #333
 	Headers 	: #2B2D42
 	Primary 	: #D10024
-	Dark 		: #222831 ##1E1F29
+	Dark 		: #2B2D42 ##1E1F29
 	Grey 		: #E4E7ED #FBFBFC #8D99AE #B9BABC
 
 Fonts: Montserrat
@@ -446,7 +446,7 @@ body {
   #header {
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: #222831;
+    background-color: #2B2D42;
   }
 
   .header-logo {
@@ -607,7 +607,7 @@ body {
       position: fixed;
       left: 0;
       top: 0;
-      background: #222831;
+      background: #2B2D42;
       height: 100vh;
       max-width: 250px;
       width: 0%;
@@ -1876,7 +1876,7 @@ body {
   ===========================================================*/
 
   #footer {
-    background: #222831;
+    background: #2B2D42;
     color: #B9BABC;
   }
 
@@ -1928,7 +1928,7 @@ body {
   }
 
   .footer-payments li a {
-    color: #222831;
+    color: #2B2D42;
     font-size: 36px;
     display: block;
   }
