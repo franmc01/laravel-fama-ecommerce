@@ -264,6 +264,13 @@ a {
 }
 
 @media screen and (max-width: 800px) {
+
+.section-title {
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 35px;
+}
+
   .menu .contenedor {
     width: 90%;
   }
@@ -280,8 +287,10 @@ a {
     position: absolute;
     left: 0;
     background: #232f3f;
-    height: 100vh;
-    width: 80%;
+    /* height: 100vh;
+    width: 80%; */
+    height: 80px;
+    width: 50%;
     z-index: 2000;
     transition: 0.3s ease all;
     transform: translate(-100%);

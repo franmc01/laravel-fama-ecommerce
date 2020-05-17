@@ -42,13 +42,6 @@
 	            <p>Todas las<span>Categorias</span></p>
 	            <i class="fa fa-caret-down"></i>
 	        </div>
-	        {{-- <div class="enlaces">
-	            <a href="#">Electrodomésticos</a>
-	            <a href="#">Escolar</a>
-	            <a href="#">Hogar</a>
-	            <a href="#">Motos</a>
-	            <a href="#">Tecnología</a>
-	        </div> --}}
 	    </div>
 	    <div class="contenedor contenedor-grid">
 	        <div class="grid" id="grid">
