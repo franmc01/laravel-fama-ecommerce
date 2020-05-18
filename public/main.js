@@ -38,7 +38,7 @@ document.querySelector('#btn-menu-barras').addEventListener('click', (e) => {
 		document.querySelector('body').style.overflow = 'visible';
 	} else {
 		contenedorEnlacesNav.classList.add('activo');
-		document.querySelector('body').style.overflow = 'hidden';
+		document.querySelector('body').style.overflow = 'visible';
 	}
 });
 

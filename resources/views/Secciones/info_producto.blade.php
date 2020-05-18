@@ -27,6 +27,8 @@
     <!-- Custom stlylesheet -->
     <link type="text/css" rel="stylesheet" href="{{ asset('/css/estilos.css') }}" />
 
+    <link rel="stylesheet" href="{{ asset('estilos.css') }}">
+
 </head>
 <body>
     <!-- HEADER -->
@@ -198,6 +200,6 @@
 		<script src="{{ asset('/js/nouislider.min.js') }}"></script>
 		<script src="{{ asset('/js/jquery.zoom.min.js')}}"></script>
 		<script src="{{ asset('/js/script.js')}}"></script>
-
+        <script src="{{ asset('main.js') }}"></script>
 	</body>
 </html>

@@ -6,8 +6,8 @@ use App\Categoria;
 use App\Foto;
 use App\Producto;
 use App\SubCategoria;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
@@ -20,9 +20,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-       $datos=Producto::with('categoria', 'subcategoria','fotos')->get();
-       $F=Foto::all();
-       return view('AdminLTE\Productos\index',compact('datos', 'F'));
+        $datos = Producto::with('categoria', 'subcategoria', 'fotos')->get();
+        $F = Foto::all();
+        return view('AdminLTE\Productos\index', compact('datos', 'F'));
     }
 
     /**
@@ -32,9 +32,9 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        $marcas=SubCategoria::all();
-        $categorias=Categoria::all();
-        return view('AdminLTE\Productos\create',compact('marcas','categorias'));
+        $marcas = SubCategoria::all();
+        $categorias = Categoria::all();
+        return view('AdminLTE\Productos\create', compact('marcas', 'categorias'));
     }
 
     /**
@@ -45,29 +45,29 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[ 'nombre'=> 'required',
-                                   'descripcion'=> 'required',
-                                   'codigo'=> 'required',
-                                   'fecha'=> 'required',
-                                   'categoria'=> 'required',
-                                   'marca'=> 'required',
-                                   'precio'=> 'required',
-                                   'imagenes' => 'required',
-                                   'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-                                ]);
-        $producto=new Producto();
-        $producto->nombre_producto=$request->nombre;
-        $producto->descripcion=$request->descripcion;
-        $producto->codigo_unico=$request->codigo;
-        $producto->precio=$request->precio;
-        $producto->publicado=Carbon::parse($request->fecha);
-        $producto->categoria_id=Categoria::find($cat=$request->categoria) ? $cat : Categoria::create(['nombre_categoria' => $cat])->id;
-        $producto->subcategoria_id=SubCategoria::find($sub=$request->marca) ? $sub : SubCategoria::create(['nombre_sub' => $sub])->id;
+        $this->validate($request, ['nombre' => 'required',
+            'descripcion' => 'required',
+            'codigo' => 'required',
+            'fecha' => 'required',
+            'categoria' => 'required',
+            'marca' => 'required',
+            'precio' => 'required',
+            'imagenes' => 'required',
+            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $producto = new Producto();
+        $producto->nombre_producto = $request->nombre;
+        $producto->descripcion = $request->descripcion;
+        $producto->codigo_unico = $request->codigo;
+        $producto->precio = $request->precio;
+        $producto->publicado = Carbon::parse($request->fecha);
+        $producto->categoria_id = Categoria::find($cat = $request->categoria) ? $cat : Categoria::create(['nombre_categoria' => $cat])->id;
+        $producto->subcategoria_id = SubCategoria::find($sub = $request->marca) ? $sub : SubCategoria::create(['nombre_sub' => $sub])->id;
         $producto->save();
         foreach ($request->file('imagenes') as $foto) {
-            $fotos= new Foto();
-            $fotos->producto_id=$producto->id;
-            $fotos->url=$foto->store('product_img');
+            $fotos = new Foto();
+            $fotos->producto_id = $producto->id;
+            $fotos->url = $foto->store('product_img');
             $fotos->save();
             $optima = Image::make(Storage::get($fotos->url));
             $optima->widen(600)->encode();
@@ -84,10 +84,10 @@ class ProductoController extends Controller
      */
     public function edit(Producto $producto)
     {
-        $marcas=SubCategoria::all();
-        $categorias=Categoria::all();
-        $editado=Producto::with('categoria', 'subcategoria','fotos')->find($producto->id);
-        return view('AdminLTE\Productos\edit', compact('editado','marcas','categorias'));
+        $marcas = SubCategoria::all();
+        $categorias = Categoria::all();
+        $editado = Producto::with('categoria', 'subcategoria', 'fotos')->find($producto->id);
+        return view('AdminLTE\Productos\edit', compact('editado', 'marcas', 'categorias'));
     }
 
     /**
@@ -99,15 +99,15 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        $this->validate($request,[ 'nombre'=> 'required',
-                                   'descripcion'=> 'required',
-                                   'codigo'=> 'required',
-                                   'fecha'=> 'required',
-                                   'categoria'=> 'required',
-                                   'marca'=> 'required',
-                                    'precio' => 'required',
-                                   'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-                                ]);
+        $this->validate($request, ['nombre' => 'required',
+            'descripcion' => 'required',
+            'codigo' => 'required',
+            'fecha' => 'required',
+            'categoria' => 'required',
+            'marca' => 'required',
+            'precio' => 'required',
+            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
         if ($request->file('imagenes')) {
             foreach ($request->file('imagenes') as $foto) {
                 $fotos = new Foto();
@@ -119,13 +119,13 @@ class ProductoController extends Controller
                 Storage::put($fotos->url, (string) $optima);
             }
         }
-        $producto->nombre_producto=$request->nombre;
-        $producto->descripcion=$request->descripcion;
-        $producto->codigo_unico=$request->codigo;
+        $producto->nombre_producto = $request->nombre;
+        $producto->descripcion = $request->descripcion;
+        $producto->codigo_unico = $request->codigo;
         $producto->precio = $request->precio;
-        $producto->publicado=Carbon::parse($request->fecha);
-        $producto->categoria_id=Categoria::find($cat=$request->categoria) ? $cat : Categoria::create(['nombre_categoria' => $cat])->id;
-        $producto->subcategoria_id=SubCategoria::find($sub=$request->marca) ? $sub : SubCategoria::create(['nombre_sub' => $sub])->id;
+        $producto->publicado = Carbon::parse($request->fecha);
+        $producto->categoria_id = Categoria::find($cat = $request->categoria) ? $cat : Categoria::create(['nombre_categoria' => $cat])->id;
+        $producto->subcategoria_id = SubCategoria::find($sub = $request->marca) ? $sub : SubCategoria::create(['nombre_sub' => $sub])->id;
         $producto->save();
         return back()->with('success', 'El producto ha sido actualizado correctamente');
     }

@@ -16,13 +16,13 @@
 
 </head>
 <body>
-    <!-- HEADER -->
-    @include('Partials\header')
-    <!-- HEADER -->
+        <!-- HEADER -->
+        @include('Partials\header')
+        <!-- HEADER -->
 
-    <!-- NAVEGATION -->
-    @include('Partials\nav')
-    <!-- NAVEGATION -->
+        <!-- NAVEGATION -->
+        @include('Partials\nav')
+        <!-- NAVEGATION -->
 
     {{-- Sección del body --}}
 
