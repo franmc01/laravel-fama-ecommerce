@@ -4,17 +4,17 @@
 		        <button id="btn-menu-cerrar" class="btn-menu-cerrar"><i class="fa fa-times"></i></button>
 		    </div>
 		    <div class="contenedor contenedor-enlaces-nav">
-		        <div class="enlaces">
+                <div class="enlaces">
                     <a href="{{ route('inicio.tienda') }}">Inicio</a>
-                    @foreach ($categorias as $item)
-                        <a href="{{ route('filtro.categoria' , $item->nombre_categoria) }}" style="text-transform: capitalize">{{ $item->nombre_categoria }}</a>
-                    @endforeach
-		        </div>
-		        <div class="btn-departamentos" id="btn-departamentos">
-		            <p>Otras<span>Categorias</span></p>
-		            <i class="fa fa-caret-down"></i>
-		        </div>
-		    </div>
+                </div>
+                <div class="btn-departamentos" id="btn-departamentos">
+                    <p>Categorias</span></p>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                                <div class="enlaces">
+                                    <a href="{{ route('inicio.tienda') }}">Ayuda</a>
+                                </div>
+            </div>
 		    <div class="contenedor contenedor-grid">
 		        <div class="grid" id="grid">
 		            <div class="categorias">
@@ -238,4 +238,4 @@
 		            </div>
 		        </div>
 		    </div>
-		</nav>
+        </nav>

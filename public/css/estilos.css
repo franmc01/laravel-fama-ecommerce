@@ -417,9 +417,9 @@ body {
   \*----------------------------*/
 
   #top-header {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #1E1F29;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: #2B2D42;
   }
 
   .header-links li {
@@ -443,6 +443,13 @@ body {
   .header-links li i {
     color: #D10024;
     margin-right: 5px;
+  }
+
+  .historias{
+    height: 70vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   /*----------------------------*\
@@ -2035,7 +2042,6 @@ body {
     }
     #top-header .header-links.pull-right {
       float: none !important;
-      margin-top: 5px;
     }
     .header-logo {
       float: none;

@@ -5,7 +5,7 @@ a {
 .contenedor {
   margin: auto;
   width: 90%;
-  max-width: 1150px;
+  max-width: 1100px;
 }
 
 /* ------------------------- */
@@ -14,7 +14,7 @@ a {
 .menu {
   background: #2B2D42;
   padding: 5px 0;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   border-bottom: 3px solid #D10024;
 }
 
@@ -54,12 +54,12 @@ a {
 
 .menu .btn-departamentos {
   color: #fff;
-  padding: 7px;
+  padding: 1px;
   border-radius: 3px;
   display: flex;
   align-items: flex-end;
   border: 1px solid transparent;
-  font-size: 12px;
+  font-size: 14px;
   cursor: default;
 }
 
