@@ -179,7 +179,7 @@
                                         <div class="product">
                                             <div class="product-img">
                                                 @if ($item->fotos->count() >= 1)
-                                                <img src="/storage/{{$item->fotos->first()->url }}" alt="Imagen del producto" height="200px" width="100px" style="object-fit: cover;">
+                                                <a href="{{ route('info.producto', $item->id) }}"><img src="/storage/{{$item->fotos->first()->url }}" alt="Imagen del producto" height="200px" width="100px" style="object-fit: cover;"></a>
                                                 @endif
                                                 <div class="product-label">
                                                     <span class="new">COD:</span>
@@ -216,7 +216,7 @@
         <!-- Sección del body -->
 
 
-        
+
 
 
     <!-- FOOTER -->
