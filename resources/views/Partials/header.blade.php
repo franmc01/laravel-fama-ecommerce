@@ -1,6 +1,6 @@
 <header>
     <!-- TOP HEADER -->
-    {{-- <div id="top-header">
+    <div id="top-header">
         <div class="container">
 
             <ul class="header-links pull-left">
@@ -12,7 +12,7 @@
                 <li><a href="{{ route('login') }}" target="_blank"><i class="fa fa-user-o"></i>Admin</a></li>
             </ul>
         </div>
-    </div> --}}
+    </div>
     <!-- /TOP HEADER -->
 
     <!-- MAIN HEADER -->
