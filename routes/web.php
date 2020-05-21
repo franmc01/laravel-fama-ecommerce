@@ -31,3 +31,8 @@ Route::get('/productos/categoria/{categoria}', 'FiltradoController@filtrado_cate
 Route::post('productos/resultados-de-la-busqueda', 'FiltradoController@busqueda')->name('filtro.termino');
 
 Auth::routes();
+
+Route::get('/banner', 'BannerController@index')->name('inicio.banner');
+
+
+

@@ -31,6 +31,7 @@
 
         </ul>
     </li>
+
     <li class="nav-item">
         <a href="{{ route('info.edit') }}" class="nav-link">
         <i class="nav-icon fa fa-address-book"></i>
@@ -55,6 +56,13 @@
 
         </ul>
     </li>
+
+        <li class="nav-item">
+            <a href="{{ route('inicio.banner') }}" class="nav-link">
+                <i class="nav-icon fa fa-audio-description"></i>
+                <p>Banner</p>
+            </a>
+        </li>
 
 
 </ul>
