@@ -34,6 +34,8 @@ Auth::routes();
 
 Route::get('/banner', 'BannerController@index')->name('inicio.banner');
 Route::post('/banner-crear', 'BannerController@store')->name('crear.banner');
+Route::delete('/fotos/{foto}', 'BannerController@destroy')->name('eliminar.banner');
+
 
 
 

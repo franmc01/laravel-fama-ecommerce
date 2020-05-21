@@ -53,14 +53,20 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="title">Imagenes actuales</label>
-                    @foreach ($b as $item)
-                        <a href="">{{$item}}</a>
+                    @foreach ($b as $foto)
+                    <form action="{{ route('eliminar.banner', $foto) }}" method="post">
+                        @method('DELETE') @csrf
+                        <div class="col-md-5 mb-2">
+                            <button class="btn btn-danger btn-xs" style="position: absolute"><i class="fa fa-ban"></i></button>
+                            <img class="img-responsive" width="100%" src="/storage/{{ $foto->banner }}" alt="">
+                        </div>
+                    </form>
                     @endforeach
                 </div>
+                <h2>Me falta validar y vincular a la tienda</h2>
             </div>
-        </>
+        </div>
+
     </div>
 
-</div>
-
-@endsection
+    @endsection
