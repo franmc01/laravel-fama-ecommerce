@@ -20,12 +20,21 @@
 @endsection
 
 @section('content')
+@if (Session::has('success'))
+<div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h5><i class="icon fas fa-check"></i> Notificación!</h5>
+    {{ Session::get('success') }}
+</div>
+@endif
+
 
 <div class="row">
     <div class="col-md-7">
         <div class="card card-outline card-gray">
             <div class="card-body">
-                <form action="">
+                <form method="POST" action="{{ route('crear.banner') }}" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group">
                         <label> Selecciones las los banners a publicar: </label>
                         <input id="input-id" @error('banner') is-invalid @enderror name="banner[]" type="file" multiple>
@@ -44,8 +53,9 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="title">Imagenes actuales</label>
-                    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-                    Aun esta en desarollo me llevaron a fumigar
+                    @foreach ($b as $item)
+                        <a href="">{{$item}}</a>
+                    @endforeach
                 </div>
             </div>
         </>
