@@ -460,6 +460,7 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #2B2D42;
+    border-bottom: 3px solid #D10024;
   }
 
   .header-logo {
