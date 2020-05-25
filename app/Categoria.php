@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categoria extends Model
 {
-
+    public $timestamps = false;
     protected $guarded = [];
     public function productos()
     {
         return $this->hasMany('App\Producto');
     }
 
-
-    public function getRouteKeyName(){
+    public function getRouteKeyName()
+    {
 
         return 'nombre_categoria';
     }
