@@ -23,7 +23,7 @@
         <!-- NAVEGATION -->
         @include('Partials\nav')
         <!-- NAVEGATION -->
-
+                @if (!isset($mensaje))
         <!--carousel-->
         <div class="historias">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -58,7 +58,7 @@
 
         <!-- Sección del body -->
                 <!-- SECTION -->
-                @if (!isset($mensaje))
+
                 <div class="section">
                     <!-- container -->
                     <div class="container">

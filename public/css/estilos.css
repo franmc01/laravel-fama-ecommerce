@@ -504,66 +504,6 @@ body {
     border-radius: 0px 40px 40px 0px;
   }
 
-  /*----------------------------*\
-      Cart
-  \*----------------------------*/
-
-  .header-ctn {
-    float: unset;
-    padding: 15px 0px 15px 14px;
-  }
-
-  .header-ctn>div {
-    display: inline-block;
-  }
-
-  .header-ctn>div+div {
-    margin-left: 125px;
-  }
-
-  .header-ctn>div>a {
-    display: block;
-    position: relative;
-    width: 90px;
-    text-align: center;
-    color: #FFF;
-  }
-
-
-  .header-ctn>div>a>i {
-    display: block;
-    padding-left: 25px;
-    font-size: 20px;
-  }
-
-  .header-ctn>div>a>span {
-    font-size: 12px;
-  }
-
-
-
-  .header-ctn .menu-toggle {
-    display: none;
-  }
-
-  .cart-dropdown {
-    position: absolute;
-    width: 300px;
-    background: #FFF;
-    padding: 15px;
-    -webkit-box-shadow: 0px 0px 0px 2px #E4E7ED;
-    box-shadow: 0px 0px 0px 2px #E4E7ED;
-    z-index: 99;
-    right: 0;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .dropdown.open>.cart-dropdown {
-    opacity: 1;
-    visibility: visible;
-  }
-
   /*=========================================================
       03 -> Navigation
   ===========================================================*/
