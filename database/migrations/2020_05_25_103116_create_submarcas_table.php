@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMarcasTable extends Migration
+class CreateSubmarcasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateMarcasTable extends Migration
      */
     public function up()
     {
-        Schema::create('marcas', function (Blueprint $table) {
+        Schema::create('submarcas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_marca');
-            $table->unsignedBigInteger('categoria_id');
-            $table->foreign('categoria_id')->references('id')->on('categorias');
+            $table->string('nombre_submarca');
+            $table->unsignedBigInteger('marca_id');
+            $table->foreign('marca_id')->references('id')->on('marcas');
 
         });
     }
@@ -29,6 +29,6 @@ class CreateMarcasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('marcas');
+        Schema::dropIfExists('submarcas');
     }
 }
