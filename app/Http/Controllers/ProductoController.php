@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Categoria;
 use App\Foto;
+use App\Marca;
 use App\Producto;
 use App\SubCategoria;
+use App\Submarca;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -34,7 +36,9 @@ class ProductoController extends Controller
     {
         $marcas = SubCategoria::all();
         $categorias = Categoria::all();
-        return view('AdminLTE\Productos\create', compact('marcas', 'categorias'));
+        $subcat = Marca::all();
+        $subcat1 = Submarca::all();
+        return view('AdminLTE\Productos\create', compact('marcas', 'categorias','subcat','subcat1'));
     }
 
     /**
@@ -45,6 +49,8 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
+
+        // return $request;
         $this->validate($request, ['nombre' => 'required',
             'descripcion' => 'required',
             'codigo' => 'required',
@@ -53,6 +59,8 @@ class ProductoController extends Controller
             'marca' => 'required',
             'precio' => 'required',
             'imagenes' => 'required',
+            'subcategoria' => 'required',
+            'subcategoria1' => 'required',
             'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $producto = new Producto();
@@ -73,6 +81,8 @@ class ProductoController extends Controller
             $optima->widen(600)->encode();
             Storage::put($fotos->url, (string) $optima);
         }
+        Marca::find($marca=$request->subcategoria) ? $marca : $y=Marca::create(['nombre_marca' => $marca, 'categoria_id'=>$producto->categoria_id])->id;
+        Submarca::find($smarca=$request->subcategoria1) ? $smarca : Submarca::create(['nombre_submarca' => $smarca, 'marca_id'=>$y])->id;
         return back()->with('success', 'El producto ha sido registrado correctamente');
     }
 

@@ -6,6 +6,16 @@ $("#example1").DataTable({
 $('.categoria').select2({
     theme: 'bootstrap4',
     tags: true
+});
+
+$('.subcategoria').select2({
+    theme: 'bootstrap4',
+    tags: true
+});
+
+$('.subcategoria1').select2({
+    theme: 'bootstrap4',
+    tags: true
 
 });
 $('.marca').select2({
