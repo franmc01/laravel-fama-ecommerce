@@ -23,11 +23,12 @@ class FiltradoController extends Controller
     }
 
 
-    public function eliminar_foto( Foto $foto)
+    public function eliminar_foto(Foto $foto)
     {
         Storage::delete($foto->url);
         $foto->delete();
         return back()->with('success', 'La fotografía del producto ha sido eliminada correctamente');
+
     }
 
 

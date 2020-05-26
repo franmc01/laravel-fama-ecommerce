@@ -148,7 +148,7 @@
                 </div>
                 <div class="row">
                     @foreach ($editado->fotos as $foto)
-                        <form action="{{ route('fotos.destroy', $foto) }}" method="post">
+                        <form action="{{ route('eliminar.xfoto', $foto) }}" method="post">
                             @method('DELETE') @csrf
                             <div class="col-md-4">
                                 <button class="btn btn-danger btn-xs" style="position: absolute"><i class="fa fa-ban"></i></button>

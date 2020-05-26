@@ -11,18 +11,22 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/sistema', 'InformacionController@contador')->name('tienda');
 
 Route::group(['middleware' => ['auth']], function () {
 
     Route::resource('/productos', 'ProductoController');
-    Route::delete('/fotos/{foto}', 'FiltradoController@eliminar_foto')->name('fotos.destroy');
     Route::get('/informacion-pagina', 'InformacionController@editar_info')->name('info.edit');
     Route::put('/informacion-pagina/actualizar/{id}', 'InformacionController@update_info')->name('info.update');
     Route::get('/productos-eliminados', 'InformacionController@eliminados')->name('productos.eliminados');
     Route::get('/restaurar/{x}', 'InformacionController@restaurar')->name('restaurar');
+    Route::get('/banner', 'BannerController@index')->name('inicio.banner');
+    Route::post('/banner-crear', 'BannerController@store')->name('crear.banner');
+    Route::delete('/elimnar-foto/{foto}', 'FiltradoController@eliminar_foto')->name('eliminar.xfoto');
+    Route::delete('/fotos/{foto}', 'BannerController@destroy')->name('eliminar.banner');
+
 });
 
 Route::get('/', 'TiendaController@index')->name('inicio.tienda');
@@ -31,11 +35,3 @@ Route::get('/productos/categoria/{categoria}', 'FiltradoController@filtrado_cate
 Route::post('productos/resultados-de-la-busqueda', 'FiltradoController@busqueda')->name('filtro.termino');
 
 Auth::routes();
-
-Route::get('/banner', 'BannerController@index')->name('inicio.banner');
-Route::post('/banner-crear', 'BannerController@store')->name('crear.banner');
-Route::delete('/fotos/{foto}', 'BannerController@destroy')->name('eliminar.banner');
-
-
-
-
