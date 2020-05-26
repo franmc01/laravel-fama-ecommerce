@@ -8,6 +8,7 @@ class Categoria extends Model
 {
     public $timestamps = false;
     protected $guarded = [];
+
     public function productos()
     {
         return $this->hasMany('App\Producto');
@@ -17,5 +18,10 @@ class Categoria extends Model
     {
 
         return 'nombre_categoria';
+    }
+
+        public function marca()
+    {
+        return $this->hasMany('App\Marca');
     }
 }
