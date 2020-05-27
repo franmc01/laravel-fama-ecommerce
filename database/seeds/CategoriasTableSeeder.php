@@ -17,11 +17,19 @@ class CategoriasTableSeeder extends Seeder
         $cate->save();
 
         $cate = new Categoria();
-        $cate->nombre_categoria= 'Escolar';
+        $cate->nombre_categoria= 'TV, Audio y video';
         $cate->save();
 
         $cate = new Categoria();
-        $cate->nombre_categoria= 'Motos';
+        $cate->nombre_categoria= 'Movilidad';
+        $cate->save();
+
+        $cate = new Categoria();
+        $cate->nombre_categoria= 'Hogar';
+        $cate->save();
+
+        $cate = new Categoria();
+        $cate->nombre_categoria= 'Insumos médicos';
         $cate->save();
 
         $cate = new Categoria();
@@ -29,7 +37,11 @@ class CategoriasTableSeeder extends Seeder
         $cate->save();
 
         $cate = new Categoria();
-        $cate->nombre_categoria= 'Hogar';
+        $cate->nombre_categoria= 'Librería y oficina';
+        $cate->save();
+
+        $cate = new Categoria();
+        $cate->nombre_categoria= 'Bebés';
         $cate->save();
     }
 }

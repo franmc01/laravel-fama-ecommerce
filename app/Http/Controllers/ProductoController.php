@@ -22,9 +22,11 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $datos = Producto::with('categoria', 'subcategoria', 'fotos')
-            ->join('marcas', 'productos.categoria_id', '=', 'marcas.categoria_id')
-            ->join('submarcas','submarcas.marca_id', '=', 'marcas.id')->get();
+        $datos = Producto::with('categoria', 'marca', 'fotos')
+            ->join('subcategoria', 'subcategoria.categoria_id', '=', 'productos.categoria_id')
+            ->join('subcategoria2', 'subcategoria.id', '=', 'subcategoria2.subcategoria_id')->get();
+
+        //  return $datos;
         return view('AdminLTE\Productos\index', compact('datos'));
     }
 
@@ -82,7 +84,7 @@ class ProductoController extends Controller
             $optima->widen(600)->encode();
             Storage::put($fotos->url, (string) $optima);
         }
-        Marca::find($marca = $request->subcategoria) ? $marca : $y = Marca::create(['nombre_marca' => $marca, 'categoria_id' => $producto->categoria_id])->id;
+        $y = Marca::find($marca = $request->subcategoria) ? $marca : $y = Marca::create(['nombre_marca' => $marca, 'categoria_id' => $producto->categoria_id])->id;
         Submarca::find($smarca = $request->subcategoria1) ? $smarca : Submarca::create(['nombre_submarca' => $smarca, 'marca_id' => $y])->id;
         return back()->with('success', 'El producto ha sido registrado correctamente');
     }
@@ -97,9 +99,12 @@ class ProductoController extends Controller
     {
         $marcas = SubCategoria::all();
         $categorias = Categoria::all();
+        $subcat = Marca::all();
+        $subcat1 = Submarca::all();
+
         $editado = Producto::with('categoria', 'subcategoria', 'fotos')->find($producto->id);
         // return $editado;
-        return view('AdminLTE\Productos\edit', compact('editado', 'marcas', 'categorias'));
+        return view('AdminLTE\Productos\edit', compact('editado', 'marcas', 'categorias', 'subcat', 'subcat1'));
     }
 
     /**
