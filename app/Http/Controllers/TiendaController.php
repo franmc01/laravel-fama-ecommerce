@@ -14,10 +14,9 @@ class TiendaController extends Controller
     public function index()
     {
         $favoritas=Categoria::all();
-
         return view('welcome', [
             'productos' => Producto::with('Categoria','Subcategoria','fotos')->paginate(),
-            'categorias' => Categoria::orderBy('nombre_categoria','ASC')->get(),
+            'categorias' => Categoria::with('marcas')->orderBy('nombre_categoria','ASC')->get(),
             'chunk' => $favoritas->take(4),
             'x'=> Informacion::all()
         ]);

@@ -20,7 +20,7 @@ class Categoria extends Model
         return 'nombre_categoria';
     }
 
-        public function marca()
+        public function marcas()
     {
         return $this->hasMany('App\Marca');
     }

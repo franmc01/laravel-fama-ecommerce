@@ -14,8 +14,8 @@ class InformacionTableSeeder extends Seeder
     public function run()
     {
         $pageinfo= new Informacion();
-        $pageinfo->celular='0999999999';
-        $pageinfo->telefono='0999999999';
+        $pageinfo->celular='0985002808';
+        $pageinfo->telefono='0985002808';
         $pageinfo->correo='anyomoal@hotmail.com';
         $pageinfo->facebook='https://www.facebook.com/yoelangel.moreiraalava';
         $pageinfo->instagram='https://www.instagram.com/iamfrancis98/';
