@@ -68,8 +68,8 @@ body {
   }
 
   a {
-    color: #2B2D42;
-    font-weight: 500;
+    color: #fff;
+    font-weight: normal;
     -webkit-transition: 0.2s color;
     transition: 0.2s color;
   }
@@ -488,9 +488,9 @@ body {
 
 
   .header-search form .input {
-    width: calc(100% - 110px);
+    width: calc(100% - 140px);
     margin-right: -4px;
-    padding-left: 30px;
+    padding-left: 35px;
     border-radius: 40px 0px 0px 40px;
   }
 

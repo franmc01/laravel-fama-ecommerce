@@ -32,7 +32,7 @@
                 <!-- /LOGO -->
 
                 <!-- SEARCH BAR -->
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <div class="header-search">
                         <form method="POST" action="{{ route('filtro.termino') }}">
                             @csrf
@@ -47,15 +47,14 @@
                 </div>
                 <!-- /SEARCH BAR -->
 
-                <div class="col-md-1 clearfix"></div>
                 <!-- ACCOUNT -->
-                <div class="col-md-2 clearfix">
+                <div class="col-md-1 clearfix">
                     <div class="header-ctn">
                         <!-- Wishlist -->
-                        <div>
+                        <div class="text-center" style="padding-left: 40px; padding-top:10px">
                             <a href="https://twitter.com/hashtag/YoMeQuedoEnCasa?src=hashtag_click">
-                                <i class="fa fa-home"></i>
-                                <span>#YoMeQuedoEnCasa</span>
+                                <span style="padding-left: 55px"><i class="fa fa-home"></i></span>
+                                <span style="font-size:12px;">#YoMeQuedoEnCasa</span>
                             </a>
                         </div>
                         <!-- /Wishlist -->
