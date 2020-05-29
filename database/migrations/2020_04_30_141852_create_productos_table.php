@@ -24,6 +24,10 @@ class CreateProductosTable extends Migration
             $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->unsignedBigInteger('subcategoria_id');
             $table->foreign('subcategoria_id')->references('id')->on('sub_categorias');
+            $table->unsignedBigInteger('marca_id');
+            $table->foreign('marca_id')->references('id')->on('marcas');
+            $table->unsignedBigInteger('submarca_id');
+            $table->foreign('submarca_id')->references('id')->on('submarcas');
             $table->softDeletes();
         });
     }
