@@ -19,6 +19,10 @@ class Producto extends Model
 
     public function subcategoria() { return $this->belongsTo('App\Subcategoria'); }
 
+    public function marca() { return $this->belongsTo('App\Marca'); }
+
+    public function submarca() { return $this->belongsTo('App\Submarca'); }
+
     public function fotos() { return $this->hasMany('App\Foto'); }
 
 

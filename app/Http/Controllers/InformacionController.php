@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Informacion;
 use Illuminate\Http\Request;
 use App\Categoria;
-use App\SubCategoria;
+use App\Foto;
+use App\Marca;
 use App\Producto;
+use App\SubCategoria;
+use App\Submarca;
 
 class InformacionController extends Controller
 {
@@ -50,10 +53,10 @@ class InformacionController extends Controller
 
     public function contador()
     {
-        $a=Categoria::all()->count();
-        $b=Producto::all()->count();
-        $c=SubCategoria::all()->count();
-        $d=Producto::onlyTrashed()->count();
+        $a=Producto::all()->count();
+        $b=Producto::onlyTrashed()->count();
+        $c=Categoria::all()->count();
+        $d=Marca::all()->count();
 
         return view('Secciones\dashboard', compact('a','b','c','d'));
 

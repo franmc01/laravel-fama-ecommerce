@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Categoria;
 use App\Foto;
 use App\Marca;
 use App\Producto;
-use App\SubCategoria;
 use App\Submarca;
+use App\Categoria;
 use Carbon\Carbon;
+use App\SubCategoria;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -22,11 +22,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $datos = Producto::with('categoria', 'marca', 'fotos')
-            ->join('subcategoria', 'subcategoria.categoria_id', '=', 'productos.categoria_id')
-            ->join('subcategoria2', 'subcategoria.id', '=', 'subcategoria2.subcategoria_id')->get();
-
-        //  return $datos;
+        $datos = Producto::with('categoria', 'marca', 'fotos', 'subcategoria','submarca')->get();
         return view('AdminLTE\Productos\index', compact('datos'));
     }
 
@@ -53,7 +49,6 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
 
-        // return $request;
         $this->validate($request, ['nombre' => 'required',
             'descripcion' => 'required',
             'codigo' => 'required',
@@ -74,6 +69,8 @@ class ProductoController extends Controller
         $producto->publicado = Carbon::parse($request->fecha);
         $producto->categoria_id = Categoria::find($cat = $request->categoria) ? $cat : Categoria::create(['nombre_categoria' => $cat])->id;
         $producto->subcategoria_id = SubCategoria::find($sub = $request->marca) ? $sub : SubCategoria::create(['nombre_sub' => $sub])->id;
+        $producto->marca_id = $y = Marca::find($marca = $request->subcategoria) ? $marca : $y = Marca::create(['nombre_marca' => $marca, 'categoria_id' => $producto->categoria_id])->id;
+        $producto->submarca_id = Submarca::find($smarca = $request->subcategoria1) ? $smarca : Submarca::create(['nombre_submarca' => $smarca, 'marca_id' => $y])->id;
         $producto->save();
         foreach ($request->file('imagenes') as $foto) {
             $fotos = new Foto();
@@ -84,8 +81,7 @@ class ProductoController extends Controller
             $optima->widen(600)->encode();
             Storage::put($fotos->url, (string) $optima);
         }
-        $y = Marca::find($marca = $request->subcategoria) ? $marca : $y = Marca::create(['nombre_marca' => $marca, 'categoria_id' => $producto->categoria_id])->id;
-        Submarca::find($smarca = $request->subcategoria1) ? $smarca : Submarca::create(['nombre_submarca' => $smarca, 'marca_id' => $y])->id;
+
         return back()->with('success', 'El producto ha sido registrado correctamente');
     }
 

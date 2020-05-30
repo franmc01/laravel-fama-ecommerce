@@ -47,6 +47,7 @@
                                 <th>Subcategoria general del producto</th>
                                 <th>Subcategoria específica del producto</th>
                                 <th>Precio del producto</th>
+                                <th>Cantidad de fotos actuales</th>
                                 <th>Fecha de publicación</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
@@ -60,9 +61,10 @@
                                 <td>{{ $item->descripcion }}</td>
                                 <td>{{ $item->subcategoria->nombre_sub }}</td>
                                 <td>{{ $item->categoria->nombre_categoria }}</td>
-                                <td>{{ $item->nombre_marca }}</td>
-                                <td>{{ $item->nombre_submarca }}</td>
+                                <td>{{ $item->marca->nombre_marca }}</td>
+                                <td>{{ $item->submarca->nombre_submarca }}</td>
                                 <td>{{ $item->precio }}</td>
+                                <td>{{ $item->fotos->count() }}</td>
                                 <td>{{ $item->publicado }}</td>
                                 <td>
                                     <a name="" id="" class="btn btn-warning" href="{{ route('productos.edit', $item ) }}" role="button">Editar</a>

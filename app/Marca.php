@@ -14,4 +14,12 @@ class Marca extends Model
         return $this->belongsTo('App\Categoria');
     }
 
+    public function producto(){
+        return $this->hasMany('App\Producto');
+    }
+
+    public function submarca(){
+        return $this->hasMany('App\Submarca');
+    }
+
 }

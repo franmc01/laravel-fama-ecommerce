@@ -27,7 +27,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>{{ $b }}</h3>
+                    <h3>{{ $a }}</h3>
 
                     <p>Productos registrados</p>
                 </div>
@@ -40,9 +40,25 @@
         <!-- ./col -->
         <div class="col-lg-3 col-6">
             <!-- small box -->
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>{{ $b }}</h3>
+
+                    <p>Productos eliminados</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-trash-outline"></i>
+                </div>
+                <a href="{{ route('productos.eliminados') }}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>{{ $a }}</h3>
+                    <h3>{{ $c }}</h3>
 
                     <p>Categorias registradas</p>
                 </div>
@@ -57,9 +73,9 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>{{ $c }}</h3>
+                    <h3>{{ $d }}</h3>
 
-                    <p>Marcas registradas</p>
+                    <p>Subcategorias registradas</p>
                 </div>
                 <div class="icon">
                     <i class=" ion ion-android-bookmark"></i>
@@ -67,22 +83,6 @@
                 <a href="{{ route('productos.index') }}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-                <div class="inner">
-                    <h3>{{ $d }}</h3>
-
-                    <p>Productos eliminados</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-ios-trash-outline"></i>
-                </div>
-                <a href="{{ route('productos.eliminados') }}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
     </div>
 </div>
 
