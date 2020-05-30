@@ -20,18 +20,18 @@
 
 @section('content')
 @if (Session::has('success'))
-<div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fas fa-check"></i> Notificación!</h5>
-    {{ Session::get('success') }}
-</div>
+<script>
+    Swal.fire( 'Genial!!' , 'Producto eliminado correctamente' , 'success' );
+</script>
 @endif
 
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-header text-center">
-                <a name="" id="" class="btn btn-primary" href="{{ route('productos.create') }}" role="button">Crear nuevo producto</a>
+                <a class="btn btn-primary pull-right" href="{{ route('productos.create') }}">
+                    <span style="padding-right:5px"><i class="fa fa-plus" aria-hidden="true"></i></span> Registrar nuevo producto
+                </a>
             </div>
             <div class="card-body">
 

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Categoria;
 use App\Foto;
-use App\Http\Requests\ValidateProductRequest;
 use App\Marca;
 use App\Producto;
 use App\SubCategoria;
@@ -159,6 +158,6 @@ class ProductoController extends Controller
     public function destroy(Producto $producto)
     {
         $producto->delete();
-        return back();
+        return back()->with('success', 'El producto ha sido eliminado correctamente');
     }
 }

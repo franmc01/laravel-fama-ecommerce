@@ -20,11 +20,9 @@
 
 @section('content')
 @if (Session::has('success'))
-<div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fas fa-check"></i> Notificación!</h5>
-    {{ Session::get('success') }}
-</div>
+<script>
+    Swal.fire( 'Genial!!' , 'Producto registrado correctamente' , 'success' );
+</script>
 @endif
 
 
