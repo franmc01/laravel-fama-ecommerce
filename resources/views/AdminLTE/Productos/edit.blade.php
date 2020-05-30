@@ -121,7 +121,7 @@
                         <select name="subcategoria" class="form-control subcategoria @error('subcategoria') is-invalid @enderror" style="width: 100%;">
                             <option value="">Seleccione una opción</option>
                             @foreach ($subcat as $item)
-                            <option value="{{ $item->id }}" {{ old('subcategoria') == $item->id ? 'selected' : ''}}>{{ $item->nombre_marca }}</option>
+                            <option value="{{ $item->id }}" {{ old('subcategoria', $editado->marca_id) == $item->id ? 'selected' : ''}}>{{ $item->nombre_marca }}</option>
                             @endforeach
                         </select>
                         @error('subcategoria')
@@ -135,7 +135,7 @@
                         <select name="subcategoria1" class="form-control subcategoria1 @error('subcategoria1') is-invalid @enderror" style="width: 100%;">
                             <option value="">Seleccione una opción</option>
                             @foreach ($subcat1 as $item)
-                            <option value="{{ $item->id }}" {{ old('subcategoria1') == $item->id ? 'selected' : ''}}>{{ $item->nombre_submarca }}</option>
+                            <option value="{{ $item->id }}" {{ old('subcategoria1', $editado->submarca_id) == $item->id ? 'selected' : ''}}>{{ $item->nombre_submarca }}</option>
                             @endforeach
                         </select>
                         @error('subcategoria1')

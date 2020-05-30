@@ -30,28 +30,32 @@
                     <table id="example1" class="table table-bordered table-striped" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th>Código del producto</th>
                                 <th>Nombre del producto</th>
                                 <th>Detalle del producto</th>
-                                <th>Código del producto</th>
-                                <th>Fecha de publicación</th>
-                                <th>Categoría del producto</th>
                                 <th>Marca del producto</th>
+                                <th>Categoría del producto</th>
+                                <th>Subcategoria general del producto</th>
+                                <th>Subcategoria específica del producto</th>
                                 <th>Precio del producto</th>
+                                <th>Cantidad de fotos actuales</th>
+                                <th>Fecha de publicación</th>
                                 <th>Acción</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($datos as $item)
                             <tr>
-                                <td>{{ $item->id }}</td>
+                                <td>{{ $item->codigo_unico }}</td>
                                 <td>{{ $item->nombre_producto }}</td>
                                 <td>{{ $item->descripcion }}</td>
-                                <td>{{ $item->codigo_unico }}</td>
-                                <td>{{ $item->publicado }}</td>
-                                <td>{{ $item->categoria->nombre_categoria }}</td>
                                 <td>{{ $item->subcategoria->nombre_sub }}</td>
+                                <td>{{ $item->categoria->nombre_categoria }}</td>
+                                <td>{{ $item->marca->nombre_marca }}</td>
+                                <td>{{ $item->submarca->nombre_submarca }}</td>
                                 <td>{{ $item->precio }}</td>
+                                <td>{{ $item->fotos->count() }}</td>
+                                <td>{{ $item->publicado }}</td>
                                 <td>
                                     <a class="btn btn-info" href="{{ route('restaurar',$item->id) }}">Restaurar</a>
                                 </td>
