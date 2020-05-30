@@ -68,10 +68,10 @@ class ProductoController extends Controller
         $producto->codigo_unico = $request->codigo;
         $producto->precio = $request->precio;
         $producto->publicado = Carbon::parse($request->fecha);
-        $producto->categoria_id = Categoria::find($cat = $request->categoria) ? $cat : Categoria::create(['nombre_categoria' => $cat])->id;
-        $producto->subcategoria_id = SubCategoria::find($sub = $request->marca) ? $sub : SubCategoria::create(['nombre_sub' => $sub])->id;
-        $producto->marca_id = $y = Marca::find($marca = $request->subcategoria) ? $marca : $y = Marca::create(['nombre_marca' => $marca, 'categoria_id' => $producto->categoria_id])->id;
-        $producto->submarca_id = Submarca::find($smarca = $request->subcategoria1) ? $smarca : Submarca::create(['nombre_submarca' => $smarca, 'marca_id' => $y])->id;
+        $producto->categoria_id = Categoria::find($cat = $request->categoria) ? ucwords(strtolower($cat)) : Categoria::create(['nombre_categoria' => ucwords(strtolower($cat))])->id;
+        $producto->subcategoria_id = SubCategoria::find($sub = $request->marca) ? ucwords(strtolower($sub)) : SubCategoria::create(['nombre_sub' => ucwords(strtolower($sub))])->id;
+        $producto->marca_id = $y = Marca::find($marca = $request->subcategoria) ? ucwords(strtolower($marca)) : $y = Marca::create(['nombre_marca' => ucwords(strtolower($marca)), 'categoria_id' => $producto->categoria_id])->id;
+        $producto->submarca_id = Submarca::find($smarca = $request->subcategoria1) ? ucwords(strtolower($smarca)) : Submarca::create(['nombre_submarca' => ucwords(strtolower($smarca)), 'marca_id' => $y])->id;
         $producto->save();
         foreach ($request->file('imagenes') as $foto) {
             $fotos = new Foto();
@@ -136,15 +136,15 @@ class ProductoController extends Controller
             }
         }
 
-        $producto->nombre_producto = $request->nombre;
+        $producto->nombre_producto = ucwords(strtolower($request->nombre));
         $producto->descripcion = $request->descripcion;
         $producto->codigo_unico = $request->codigo;
         $producto->precio = $request->precio;
         $producto->publicado = Carbon::parse($request->fecha);
-        $producto->categoria_id = $x= Categoria::find($cat = $request->categoria) ? $cat : $x=Categoria::create(['nombre_categoria' => $cat])->id;
-        $producto->subcategoria_id = SubCategoria::find($sub = $request->marca) ? $sub : SubCategoria::create(['nombre_sub' => $sub])->id;
-        $producto->marca_id = $y = Marca::find($marca = $request->subcategoria) ? $marca : $y = Marca::create(['nombre_marca' => $marca, 'categoria_id' => $x])->id;
-        $producto->submarca_id = Submarca::find($smarca = $request->subcategoria1) ? $smarca : Submarca::create(['nombre_submarca' => $smarca, 'marca_id' => $y])->id;
+        $producto->categoria_id = Categoria::find($cat = $request->categoria) ? ucwords(strtolower($cat)) : Categoria::create(['nombre_categoria' => ucwords(strtolower($cat))])->id;
+        $producto->subcategoria_id = SubCategoria::find($sub = $request->marca) ? ucwords(strtolower($sub)) : SubCategoria::create(['nombre_sub' => ucwords(strtolower($sub))])->id;
+        $producto->marca_id = $y = Marca::find($marca = $request->subcategoria) ? ucwords(strtolower($marca)) : $y = Marca::create(['nombre_marca' => ucwords(strtolower($marca)), 'categoria_id' => $producto->categoria_id])->id;
+        $producto->submarca_id = Submarca::find($smarca = $request->subcategoria1) ? ucwords(strtolower($smarca)) : Submarca::create(['nombre_submarca' => ucwords(strtolower($smarca)), 'marca_id' => $y])->id;
         $producto->save();
         return back()->with('success', 'El producto ha sido actualizado correctamente');
     }
