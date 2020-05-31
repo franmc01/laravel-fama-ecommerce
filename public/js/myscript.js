@@ -24,7 +24,6 @@ $('.marca').select2({
 });
 
 $("#input-id").fileinput({
-    'previewFileType': 'any',
     'browseOnZoneClick': true,
     'theme': 'fas',
     browseClass: "btn btn-dark btn-block",

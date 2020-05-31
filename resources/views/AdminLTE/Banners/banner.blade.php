@@ -36,11 +36,12 @@
                 <form method="POST" action="{{ route('crear.banner') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label> Selecciones las los banners a publicar: </label>
+                        <label> Seleccione las imagenes de las noticias a publicar:</label>
                         <input id="input-id" @error('banner') is-invalid @enderror name="banner[]" type="file" multiple>
                         @error('banner')
                         <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
                         @enderror
+                        <small id="helpId" class="text-muted"><strong class="text-primary">Se recomienda que las dimensiones del banner deben ser las siguientes: 1390 x 450 pixeles.</strong></small>
                     </div>
                     <br>
                     <button class="btn btn-primary btn-block" type="submit">Publicar y registrar</button>
@@ -63,10 +64,10 @@
                     </form>
                     @endforeach
                 </div>
-                <h2>Me falta validar y vincular a la tienda</h2>
             </div>
         </div>
 
     </div>
+</div>
 
     @endsection

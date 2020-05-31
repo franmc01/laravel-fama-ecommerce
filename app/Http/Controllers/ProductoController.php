@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Categoria;
 use App\Foto;
 use App\Marca;
-use App\Producto;
-use App\SubCategoria;
 use App\Submarca;
+use App\Producto;
 use Carbon\Carbon;
+use App\Categoria;
+use App\SubCategoria;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -145,7 +145,7 @@ class ProductoController extends Controller
         $producto->subcategoria_id = SubCategoria::find($sub = $request->marca) ? ucwords(strtolower($sub)) : SubCategoria::create(['nombre_sub' => ucwords(strtolower($sub))])->id;
         $producto->marca_id = $y = Marca::find($marca = $request->subcategoria) ? ucwords(strtolower($marca)) : $y = Marca::create(['nombre_marca' => ucwords(strtolower($marca)), 'categoria_id' => $producto->categoria_id])->id;
         $producto->submarca_id = Submarca::find($smarca = $request->subcategoria1) ? ucwords(strtolower($smarca)) : Submarca::create(['nombre_submarca' => ucwords(strtolower($smarca)), 'marca_id' => $y])->id;
-        $url = route('productos.edit',$producto);
+        $url = route('productos.edit', $producto);
         $producto->save();
         return redirect($url)->with('success', 'El producto ha sido actualizado correctamente');
     }

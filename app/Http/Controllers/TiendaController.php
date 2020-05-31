@@ -7,6 +7,7 @@ use App\Informacion;
 use App\Producto;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Banner;
 
 class TiendaController extends Controller
 {
@@ -18,7 +19,8 @@ class TiendaController extends Controller
             'productos' => Producto::with('Categoria','Subcategoria','fotos')->paginate(),
             'categorias' => Categoria::with('marcas')->orderBy('nombre_categoria','ASC')->get(),
             'chunk' => $favoritas->take(4),
-            'x'=> Informacion::all()
+            'x'=> Informacion::all(),
+            'historias' => Banner::get()
         ]);
     }
 
