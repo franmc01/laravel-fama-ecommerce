@@ -383,6 +383,62 @@ class SubmarcasTableSeeder extends Seeder
         $sub->save();
 
         $sub = new Submarca();
+        $sub->nombre_submarca = 'Mochilas';
+        $sub->marca_id = 22;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Loncheras';
+        $sub->marca_id = 22;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Cartucheras - Multiusos';
+        $sub->marca_id = 22;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Esferos y lápices';
+        $sub->marca_id = 22;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Calculadoras';
+        $sub->marca_id = 22;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Ver disponibles';
+        $sub->marca_id = 23;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Cuaderno cuadriculado';
+        $sub->marca_id = 24;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Cuaderno de líneas';
+        $sub->marca_id = 24;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Cuaderno de dibujo';
+        $sub->marca_id = 24;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Cuadernos forrados';
+        $sub->marca_id = 24;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Cuadernos anillados';
+        $sub->marca_id = 24;
+        $sub->save();
+
+
+        $sub = new Submarca();
         $sub->nombre_submarca = 'Andadores';
         $sub->marca_id = 25;
         $sub->save();
@@ -426,5 +482,7 @@ class SubmarcasTableSeeder extends Seeder
         $sub->nombre_submarca = 'Sonajeros y maracas';
         $sub->marca_id = 26;
         $sub->save();
+
+
     }
 }
