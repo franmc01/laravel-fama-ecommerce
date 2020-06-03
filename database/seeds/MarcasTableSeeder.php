@@ -78,12 +78,12 @@ class MarcasTableSeeder extends Seeder
         $marca->save();
 
         $marca= new Marca();
-        $marca->nombre_marca='Complementos de cocina y baño';
+        $marca->nombre_marca='Complementos de cocina';
         $marca->categoria_id=4;
         $marca->save();
 
         $marca= new Marca();
-        $marca->nombre_marca='Complementos de ferretería';
+        $marca->nombre_marca='Complementos de baño';
         $marca->categoria_id=4;
         $marca->save();
 
