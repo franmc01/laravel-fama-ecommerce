@@ -17,13 +17,12 @@
 		                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $item->nombre_categoria }} <span class="caret"></span></a>
 		                    <ul class="dropdown-menu megamenu row">
 		                        @foreach ($item->marcas as $marcas)
-		                        <li class="col-sm-6">
+		                        <li class="col-sm-4">
 		                            <ul>
 		                                <li class="dropdown-header">{{ $marcas->nombre_marca }}</li>
-		                                <li><a href="#">Refrigeradoras top mount</a></li>
-		                                <li><a href="#">Refrigeradoras side by side</a></li>
-		                                <li><a href="#">Congeladores</a></li>
-		                                <li><a href="#">Vitrinas</a></li>
+		                                @foreach ($marcas->submarca as $item)
+                                        <li><a href="#">{{ $item->nombre_submarca }}</a></li>
+                                        @endforeach
 		                                <br>
 		                            </ul>
 		                        </li>

@@ -41,7 +41,7 @@ class CategoriasTableSeeder extends Seeder
         $cate->save();
 
         $cate = new Categoria();
-        $cate->nombre_categoria= 'Bebés';
+        $cate->nombre_categoria= 'Niños';
         $cate->save();
     }
 }

@@ -28,6 +28,11 @@ class MarcasTableSeeder extends Seeder
         $marca->save();
 
         $marca= new Marca();
+        $marca->nombre_marca='Cocina';
+        $marca->categoria_id=1;
+        $marca->save();
+
+        $marca= new Marca();
         $marca->nombre_marca='Mini-electrodomésticos';
         $marca->categoria_id=1;
         $marca->save();
@@ -128,7 +133,7 @@ class MarcasTableSeeder extends Seeder
         $marca->save();
 
         $marca= new Marca();
-        $marca->nombre_marca='Coches';
+        $marca->nombre_marca='Carriolas y accesorios';
         $marca->categoria_id=8;
         $marca->save();
 
