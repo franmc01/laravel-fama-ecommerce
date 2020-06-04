@@ -169,4 +169,12 @@ class ProductoController extends Controller
             return response()->json(['data'=>$subcat]);
         }
     }
+
+    public function findSubcategoria2(Request $request)
+    {
+        if($request->ajax()){
+            $subcat2 = Submarca::where('marca_id', '=', $request->id)->get();
+            return response()->json(['data'=>$subcat2]);
+        }
+    }
 }

@@ -48,12 +48,12 @@ $("#input-id").fileinput({
     }
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
     $('#categoria').on('change',function(e) {
         e.preventDefault();
         var marcas=$("#marca");
         var cod=$('#categoria').val();
-        var url = '/es/'+cod;
+        var url='/es/'+cod;
         if(cod!='') {
             $.ajax({
                 type: 'GET',
@@ -65,14 +65,48 @@ $(document).ready(function () {
                 processData: false,
                 success: function(r) {
                     marcas.empty();
-                    $.each(r.data,function(i,item) {
-                        marcas.append('<option value="' + item.id + '">' + item.nombre_marca + '</option>');
+                    $.each(r.data,function(_i,item) {
+                        marcas.append('<option value="'+item.id+'">'+item.nombre_marca+'</option>');
+                        calculo();
                     });
                 }
             });
         } else {
             marcas.empty();
-            marcas.val( "Seleccione una opción" );
+            marcas.val("Seleccione una opción");
         }
     });
+
+    $('#marca').on('change',function(e) {
+        e.preventDefault();
+        calculo();
+    });
 });
+
+function calculo() {
+    var submarcas=$("#submarca");
+    var cod=$('#marca').val();
+    var url='/obtener/'+cod;
+    if(cod!='') {
+        $.ajax({
+            type: 'GET',
+            url: url,
+            cache: false,
+            data: cod,
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            success: function(r) {
+                submarcas.empty();
+                $.each(r.data,function(_i,item) {
+                    submarcas.append('<option value="'+item.id+'">'+item.nombre_submarca+'</option>');
+                });
+            }
+        });
+    } else {
+        submarcas.empty();
+        submarcas.val("Seleccione una opción");
+    }
+}
+
+

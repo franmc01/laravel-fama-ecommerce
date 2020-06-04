@@ -124,7 +124,7 @@
 
                     <div class="form-group">
                         <label>Subcategoria especifica del producto</label>
-                        <select name="subcategoria1" class="form-control subcategoria1 @error('subcategoria1') is-invalid @enderror" style="width: 100%;">
+                        <select id="submarca" name="subcategoria1" class="form-control subcategoria1 @error('subcategoria1') is-invalid @enderror" style="width: 100%;">
                             <option value="">Seleccione una opción</option>
                             {{-- @foreach ($subcat1 as $item)
                             <option value="{{ $item->id }}" {{ old('subcategoria1') == $item->id ? 'selected' : ''}}>{{ $item->nombre_submarca }}</option>

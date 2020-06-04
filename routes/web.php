@@ -37,3 +37,4 @@ Route::post('productos/resultados-de-la-busqueda', 'FiltradoController@busqueda'
 Auth::routes();
 
 Route::get('/es/{id}','ProductoController@findSubcategoria')->name('x');
+Route::get('/obtener/{id}','ProductoController@findSubcategoria2')->name('y');
