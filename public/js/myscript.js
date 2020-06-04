@@ -47,3 +47,10 @@ $("#input-id").fileinput({
         close: 'Cerrar vista detallada'
     }
 });
+
+$(document).ready(function () {
+    $('#categoria').on('change', function () {
+        var cod=$('#categoria').val();
+        alert(cod);
+    });
+});

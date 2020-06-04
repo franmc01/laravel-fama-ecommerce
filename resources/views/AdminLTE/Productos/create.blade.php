@@ -96,7 +96,7 @@
 
                     <div class="form-group">
                         <label>Categoria del producto</label>
-                        <select name="categoria" class="form-control categoria @error('categoria') is-invalid @enderror" style="width: 100%;">
+                        <select id="categoria" name="categoria" class="form-control categoria @error('categoria') is-invalid @enderror" style="width: 100%;">
                             <option value="">Seleccione una opción</option>
                             @foreach ($categorias as $item)
                             <option value="{{ $item->id }}" {{ old('categoria') == $item->id ? 'selected' : ''}}>{{ $item->nombre_categoria }}</option>

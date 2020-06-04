@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="/css/estilos.css" />
     <link rel="stylesheet" href="{{ asset('estilos.css') }}">
-
 </head>
 <body>
     <!-- HEADER -->
@@ -215,7 +214,7 @@
     <script src="{{ asset('/js/slick.min.js') }}"></script>
     <script src="{{ asset('/js/nouislider.min.js') }}"></script>
     <script src="{{ asset('/js/jquery.zoom.min.js') }}"></script>
+    <script src="{{ asset('/js/myscript.js') }}"></script>
     <script src="{{ asset('/js/script.js') }}"></script>
-    {{-- <script src="{{ asset('main.js') }}"></script> --}}
 </body>
 </html>
