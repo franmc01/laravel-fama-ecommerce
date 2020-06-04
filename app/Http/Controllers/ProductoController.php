@@ -161,4 +161,12 @@ class ProductoController extends Controller
         $producto->delete();
         return back()->with('success', 'El producto ha sido eliminado correctamente');
     }
+
+    public function findSubcategoria(Request $request)
+    {
+        if($request->ajax()){
+            $subcat = Marca::where('categoria_id', '=', $request->id)->get();
+            return response()->json(['data'=>$subcat]);
+        }
+    }
 }

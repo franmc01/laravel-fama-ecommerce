@@ -49,8 +49,30 @@ $("#input-id").fileinput({
 });
 
 $(document).ready(function () {
-    $('#categoria').on('change', function () {
+    $('#categoria').on('change',function(e) {
+        e.preventDefault();
+        var marcas=$("#marca");
         var cod=$('#categoria').val();
-        alert(cod);
+        var url = '/es/'+cod;
+        if(cod!='') {
+            $.ajax({
+                type: 'GET',
+                url: url,
+                cache: false,
+                data: cod,
+                dataType: "json",
+                contentType: false,
+                processData: false,
+                success: function(r) {
+                    marcas.empty();
+                    $.each(r.data,function(i,item) {
+                        marcas.append('<option value="' + item.id + '">' + item.nombre_marca + '</option>');
+                    });
+                }
+            });
+        } else {
+            marcas.empty();
+            marcas.val( "Seleccione una opción" );
+        }
     });
 });

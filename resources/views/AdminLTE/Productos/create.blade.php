@@ -110,11 +110,11 @@
 
                     <div class="form-group">
                         <label>Subcategoria general del producto</label>
-                        <select name="subcategoria" class="form-control subcategoria @error('subcategoria') is-invalid @enderror" style="width: 100%;">
+                        <select id="marca" name="subcategoria" class="form-control subcategoria @error('subcategoria') is-invalid @enderror" style="width: 100%;">
                             <option value="">Seleccione una opción</option>
-                            @foreach ($subcat as $item)
+                            {{-- @foreach ($subcat as $item)
                             <option value="{{ $item->id }}" {{ old('subcategoria') == $item->id ? 'selected' : ''}}>{{ $item->nombre_marca }}</option>
-                            @endforeach
+                            @endforeach --}}
                         </select>
                         @error('subcategoria')
                         <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
@@ -126,9 +126,9 @@
                         <label>Subcategoria especifica del producto</label>
                         <select name="subcategoria1" class="form-control subcategoria1 @error('subcategoria1') is-invalid @enderror" style="width: 100%;">
                             <option value="">Seleccione una opción</option>
-                            @foreach ($subcat1 as $item)
+                            {{-- @foreach ($subcat1 as $item)
                             <option value="{{ $item->id }}" {{ old('subcategoria1') == $item->id ? 'selected' : ''}}>{{ $item->nombre_submarca }}</option>
-                            @endforeach
+                            @endforeach --}}
                         </select>
                         @error('subcategoria1')
                         <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
