@@ -66,7 +66,8 @@ $(document).ready(function() {
                 success: function(r) {
                     marcas.empty();
                     $.each(r.data,function(_i,item) {
-                        marcas.append('<option value="'+item.id+'">'+item.nombre_marca+'</option>');
+                        // marcas.append('<option value="'+item.id+'"{{ old("subcategoria") =='+item.id+' ? "selected" : ""}}>'+item.nombre_marca+'</option>');
+                        marcas.append("<option value='"+item.id+"'{{ old('subcategoria') == +"+ item.id +" ? 'selected' : ''}}>"+item.nombre_marca+"</option>");
                         calculo();
                     });
                 }
@@ -99,7 +100,8 @@ function calculo() {
             success: function(r) {
                 submarcas.empty();
                 $.each(r.data,function(_i,item) {
-                    submarcas.append('<option value="'+item.id+'">'+item.nombre_submarca+'</option>');
+                    // submarcas.append('<option value="'+item.id+'">'+item.nombre_submarca+'</option>');
+                    submarcas.append("<option value='"+item.id+"'{{ old('subcategoria1') == +"+ item.id +" ? 'selected' : ''}}>"+item.nombre_submarca+"</option>");
                 });
             }
         });

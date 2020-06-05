@@ -102,7 +102,7 @@
 
                     <div class="form-group">
                         <label>Categoria del producto</label>
-                        <select name="categoria" class="form-control categoria @error('categoria') is-invalid @enderror" style="width: 100%;">
+                        <select id="categoria" name="categoria" class="form-control categoria @error('categoria') is-invalid @enderror" style="width: 100%;">
                             <option value="">Seleccione la categoria</option>
                             @foreach ($categorias as $item)
                             <option value="{{ $item->id }}" {{ old('categoria', $editado->categoria_id) == $item->id ? 'selected' : ''}}>{{ $item->nombre_categoria }}</option>
@@ -116,7 +116,7 @@
 
                     <div class="form-group">
                         <label>Subcategoria general del producto</label>
-                        <select name="subcategoria" class="form-control subcategoria @error('subcategoria') is-invalid @enderror" style="width: 100%;">
+                        <select id="marca" name="subcategoria" class="form-control subcategoria @error('subcategoria') is-invalid @enderror" style="width: 100%;">
                             <option value="">Seleccione una opción</option>
                             @foreach ($subcat as $item)
                             <option value="{{ $item->id }}" {{ old('subcategoria', $editado->marca_id) == $item->id ? 'selected' : ''}}>{{ $item->nombre_marca }}</option>
@@ -130,7 +130,7 @@
 
                     <div class="form-group">
                         <label>Subcategoria especifica del producto</label>
-                        <select name="subcategoria1" class="form-control subcategoria1 @error('subcategoria1') is-invalid @enderror" style="width: 100%;">
+                        <select id="submarca" name="subcategoria1" class="form-control subcategoria1 @error('subcategoria1') is-invalid @enderror" style="width: 100%;">
                             <option value="">Seleccione una opción</option>
                             @foreach ($subcat1 as $item)
                             <option value="{{ $item->id }}" {{ old('subcategoria1', $editado->submarca_id) == $item->id ? 'selected' : ''}}>{{ $item->nombre_submarca }}</option>
