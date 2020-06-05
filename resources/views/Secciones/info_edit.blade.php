@@ -21,11 +21,11 @@
 @section('content')
 
 @if (Session::has('success'))
-<div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fas fa-check"></i> Notificación!</h5>
-    {{ Session::get('success') }}
-</div>
+@if (Session::has('success'))
+<script>
+    Swal.fire( 'Genial!!' , 'Información actualizada correctamente' , 'success' );
+</script>
+@endif
 @endif
 
 <form action="{{ route('info.update',$edicion[0]->id) }}" method="POST">

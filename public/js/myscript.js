@@ -65,16 +65,13 @@ $(document).ready(function() {
                 processData: false,
                 success: function(r) {
                     marcas.empty();
+                    marcas.append('<option value="">Seleccione una opción</option>');
                     $.each(r.data,function(_i,item) {
-                        // marcas.append('<option value="'+item.id+'"{{ old("subcategoria") =='+item.id+' ? "selected" : ""}}>'+item.nombre_marca+'</option>');
                         marcas.append("<option value='"+item.id+"'{{ old('subcategoria') == +"+ item.id +" ? 'selected' : ''}}>"+item.nombre_marca+"</option>");
                         calculo();
                     });
                 }
             });
-        } else {
-            marcas.empty();
-            marcas.val("Seleccione una opción");
         }
     });
 
@@ -99,15 +96,12 @@ function calculo() {
             processData: false,
             success: function(r) {
                 submarcas.empty();
+                submarcas.append('<option value="">Seleccione una opción</option>');
                 $.each(r.data,function(_i,item) {
-                    // submarcas.append('<option value="'+item.id+'">'+item.nombre_submarca+'</option>');
                     submarcas.append("<option value='"+item.id+"'{{ old('subcategoria1') == +"+ item.id +" ? 'selected' : ''}}>"+item.nombre_submarca+"</option>");
                 });
             }
         });
-    } else {
-        submarcas.empty();
-        submarcas.val("Seleccione una opción");
     }
 }
 
