@@ -174,7 +174,7 @@
                                 <div class="product-body">
                                     <p class="product-category">{{ $item->subcategoria->nombre_sub }}</p>
                                     <h3 class="product-name"><a href="{{ route('info.producto', $item->id) }}">{{ $item->nombre_producto }}</a></h3>
-                                    <h3 class="product-category"><a href="#" </a></h3>
+                                    <h3 class="product-category"><a href="#"></h3>
                                     <div class="product-rating"></div>
                                     <div class="product-btns">
                                         <a name="" id="" class=" btn add-to-cart-btn" href="https://api.whatsapp.com/send?phone=593{{ $x[0]->telefono }}&text=Hola%20Distribuidora%20Fama,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20este%20producto:%20{{$item->nombre_producto }}.%20El%20c%C3%B3digo%20del%20producto%20es:%20{{ $item->codigo_unico }}" role="button"><span style="padding-right: 10px"><i class="fa fa-shopping-cart"></i></span> Comprar</a>

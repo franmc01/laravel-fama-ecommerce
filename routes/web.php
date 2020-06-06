@@ -32,6 +32,7 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/', 'TiendaController@index')->name('inicio.tienda');
 Route::get('producto/{id}', 'TiendaController@informacion')->name('info.producto');
 Route::get('/productos/categoria/{categoria}', 'FiltradoController@filtrado_categoria')->name('filtro.categoria');
+Route::get('/productos/subcategoria/{submarcas}', 'FiltradoController@filtrado_marcas')->name('filtro.marca');
 Route::post('productos/resultados-de-la-busqueda', 'FiltradoController@busqueda')->name('filtro.termino');
 
 Auth::routes();
