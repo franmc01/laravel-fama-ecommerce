@@ -28,16 +28,16 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('/css/estilos.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('estilos.css') }}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 </head>
 <body>
     <!-- HEADER -->
     @include('Partials\header')
     <!-- HEADER -->
 
-    <!-- NAVIGATION -->
+    <!-- NAVEGATION -->
     @include('Partials\nav')
-    <!-- /NAVIGATION -->
+    <!-- NAVEGATION -->
 
 
 
@@ -100,10 +100,12 @@
                             <div class="text-center">
                                 <hr>
                                 <br>
-                                <div class="add-to-cart">
-    								<a href="https://api.whatsapp.com/send?phone=593{{ $x[0]->telefono }}&text=Hola%20Distribuidora%20Fama,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20este%20producto:%20{{$buscado->nombre_producto }}.%20El%20c%C3%B3digo%20del%20producto%20es:%20{{ $buscado->codigo_unico }}" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Comprar</a>
-    							</div>
+
+                                    <a name="" id="" class="btn btn-danger" href="https://api.whatsapp.com/send?phone=593{{ $x[0]->telefono }}&text=Hola%20Distribuidora%20Fama,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20este%20producto%20,el%20c%C3%B3digo%20del%20mismo%20es:%20{{ $buscado->codigo_unico }}" ><i class="fa fa-shopping-cart"></i> Comprar</a>
+
                             </div>
+
+
 
 						</div>
 					</div>
@@ -145,24 +147,20 @@
                                         <div class="products-slick" data-nav="#slick-nav-1">
                                             <!-- product -->
                                             @foreach ($nuevo as $item)
-                                            <div class="col-md-3 col-xs-6">
+                                            <div class="col-md-3 col-xs-6 animate__animated animate__animate__flipInX">
                                                 <div class="product">
                                                     <div class="product-img">
                                                         @if ($item->fotos->count() >= 1)
-                                                <a href="{{ route('info.producto', $item->id) }}"><img src="/storage/{{$item->fotos->first()->url }}" alt="Imagen del producto" height="200px" width="100px" style="object-fit: cover;"></a>
+                                                        <a href="{{ route('info.producto', $item->id) }}"><img src="/storage/{{$item->fotos->first()->url }}" alt="Imagen del producto" height="200px" width="100px" style="object-fit: cover;"></a>
                                                         @endif
-                                                        <div class="product-label">
-                                                            <span class="new">COD:</span>
-                                                            <span class="sale">{{ $item->codigo_unico }}</span>
-                                                        </div>
                                                     </div>
                                                     <div class="product-body">
-                                                        <p class="product-category">{{ $item->subcategoria->nombre_sub }}</p>
-                                                        <h3 class="product-name"><a href="{{ route('info.producto', $item->id) }}">{{ $item->nombre_producto }}</a></h3>
-                                                        <h3 class="product-category"><a href="#" </a></h3>
+                                                        <p class="product-category">{{ $item->categoria->nombre_categoria }}</p>
+                                                        <h3 class="product-name"><a style="color: #333" href="{{ route('info.producto', $item->id) }}">{{ $item->nombre_producto }}</a></h3>
+                                                        <h4 class="product-price">${{ $item->precio }}</h4>
                                                         <div class="product-rating"></div>
                                                         <div class="product-btns">
-                                                            <a name="" id="" class=" btn add-to-cart-btn" href="https://api.whatsapp.com/send?phone=593985002808&text=Hola%20Distribuidora%20Fama,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20este%20producto:%20{{$item->nombre_producto }}.%20El%20c%C3%B3digo%20del%20producto%20es:%20{{ $item->codigo_unico }}" role="button"><span style="padding-right: 10px"><i class="fa fa-shopping-cart"></i></span> Comprar</a>
+                                                            <a name="" id="" class=" btn add-to-cart-btn" href="https://api.whatsapp.com/send?phone=593{{ $x[0]->telefono }}&text=Hola%20Distribuidora%20Fama,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20este%20producto:%20{{$item->nombre_producto }}.%20El%20c%C3%B3digo%20del%20producto%20es:%20{{ $item->codigo_unico }}" role="button"><span style="padding-right: 10px"><i class="fa fa-shopping-cart"></i></span> Comprar</a>
                                                         </div>
 
                                                     </div>
@@ -200,6 +198,6 @@
 		<script src="{{ asset('/js/nouislider.min.js') }}"></script>
 		<script src="{{ asset('/js/jquery.zoom.min.js')}}"></script>
 		<script src="{{ asset('/js/script.js')}}"></script>
-        <script src="{{ asset('main.js') }}"></script>
+        {{-- <script src="{{ asset('main.js') }}"></script> --}}
 	</body>
 </html>

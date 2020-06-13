@@ -168,7 +168,7 @@
                         @endif
                         @else
                         @foreach ($productos as $item)
-                        <div class="col-md-3 col-xs-6">
+                        <div class="col-md-3 col-xs-6 animate__animated animate__animate__flipInX">
                             <div class="product">
                                 <div class="product-img">
                                     @if ($item->fotos->count() >= 1)

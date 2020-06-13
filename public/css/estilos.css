@@ -68,7 +68,7 @@ body {
   }
 
   a {
-    color: #fff;
+    color: #333;
     font-weight: normal;
     -webkit-transition: 0.2s color;
     transition: 0.2s color;
@@ -869,7 +869,7 @@ body {
   .product .add-to-cart .add-to-cart-btn {
     position: relative;
     border: 2px solid transparent;
-    height: 40px;
+    height: 50px;
     padding: 0 30px;
     background-color: #ef233c;
     color: #FFF;
@@ -879,6 +879,7 @@ body {
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
   }
+
 
   .product .add-to-cart .add-to-cart-btn>i {
     position: absolute;
@@ -891,6 +892,12 @@ body {
     opacity: 0;
     visibility: hidden;
   }
+
+  .btn-danger {
+    color: #fff;
+    background-color: #D10024;
+    border-color: #D10024;
+}
 
   .product .add-to-cart .add-to-cart-btn:hover {
     background-color: #FFF;

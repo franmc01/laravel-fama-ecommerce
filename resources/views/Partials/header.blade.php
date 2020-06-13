@@ -53,8 +53,8 @@
                         <!-- Wishlist -->
                         <div class="text-center" style="padding-left: 40px; padding-top:10px">
                             <a href="https://twitter.com/hashtag/YoMeQuedoEnCasa?src=hashtag_click">
-                                <span style="padding-left: 55px"><i class="fa fa-home"></i></span>
-                                <span style="font-size:12px;">#YoMeQuedoEnCasa</span>
+                                <span style="padding-left: 55px ;color:white;"><i class="fa fa-home"></i></span>
+                                <span style="font-size:12px; color:white;">#YoMeQuedoEnCasa</span>
                             </a>
                         </div>
                         <!-- /Wishlist -->
