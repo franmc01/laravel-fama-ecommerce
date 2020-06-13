@@ -555,6 +555,13 @@ body {
 
   @media only screen and (max-width: 991px) {
 
+    .historias {
+        height: 25vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
 .header-ctn {
     float: unset;
     padding: 15px 0px 15px 14px;
@@ -1968,9 +1975,23 @@ body {
       13 -> RESPONSIVE
   ===========================================================*/
 
-  @media only screen and (max-width: 1201px) {}
+  @media only screen and (max-width: 1201px) {
+    .historias {
+        height: 25vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+  }
 
   @media only screen and (max-width: 991px) {
+    .historias {
+        height: 23vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
 .header-ctn {
     float: unset;
     padding: 15px 0px 15px 14px;
@@ -2021,6 +2042,14 @@ body {
   }
 
   @media only screen and (max-width: 480px) {
+
+    .historias {
+        height: 15vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
       .header-ctn {
     float: unset;
     padding: 15px 0px 15px 14px;
@@ -2045,6 +2074,14 @@ body {
     }
   }
   @media only screen and (max-width: 320px) {
+
+    .historias {
+        height: 16vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
 .header-ctn {
     float: unset;
     padding: 15px 0px 15px 14px;
