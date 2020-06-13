@@ -136,11 +136,18 @@
                 <div class="col-md-12">
                     <div class="section-title">
                         @if ($productos->isNotEmpty())
-                        @if (isset($mensaje))
-                        <h4>{{ $mensaje }}</h4>
-                        @else
-                        <h4 class="title">Listado completo de los productos</h4>
+                            @if (isset($mensaje))
+                                <h4>{{ $mensaje }}</h4>
+                            @else
+                                <h4 class="title">Listado completo de los productos</h4>
+                            @endif
                         @endif
+                        @if ($productos->isEmpty())
+                            @if (isset($mensaje))
+                                <h4>{{ $mensaje }}</h4>
+                            @else
+                                <h4 class="title">Listado completo de los productos</h4>
+                            @endif
                         @endif
                     </div>
                 </div>
@@ -214,7 +221,7 @@
     <script src="{{ asset('/js/slick.min.js') }}"></script>
     <script src="{{ asset('/js/nouislider.min.js') }}"></script>
     <script src="{{ asset('/js/jquery.zoom.min.js') }}"></script>
-    <script src="{{ asset('/js/myscript.js') }}"></script>
+    {{-- <script src="{{ asset('/js/myscript.js') }}"></script> --}}
     <script src="{{ asset('/js/script.js') }}"></script>
 </body>
 </html>

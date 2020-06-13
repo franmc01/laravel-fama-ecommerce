@@ -25,7 +25,7 @@
 		                                <ul>
 		                                    <li class="dropdown-header">{{ $marcas->nombre_marca }}</li>
 		                                    @foreach ($marcas->submarca as $item)
-		                                    <li><a href="{{ route('filtro.marca',  $item->nombre_submarca) }}">{{ $item->nombre_submarca }}</a></li>
+		                                    <li><a href="{{ route('filtro.marca',  $item) }}">{{ $item->nombre_submarca }}</a></li>
 		                                    @endforeach
 		                                    <br>
 		                                </ul>
