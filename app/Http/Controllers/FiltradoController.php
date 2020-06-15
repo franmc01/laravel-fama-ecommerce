@@ -14,7 +14,7 @@ class FiltradoController extends Controller
 {
     public function filtrado_categoria(Categoria $categoria)
     {
-        return $categoria;
+        // return $categoria;
         return view('welcome', [
             'mensaje' => "Productos de la categoria - $categoria->nombre_categoria",
             'mensaje2' => "No se encontraron productos para esta categoria",
