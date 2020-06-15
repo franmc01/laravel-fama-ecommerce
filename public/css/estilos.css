@@ -419,7 +419,7 @@ body {
   #top-header {
     padding-top: 1px;
     padding-bottom: 1px;
-    background-color: #2B2D42;
+    background-color: #1E1F29;
   }
 
   .header-links li {
@@ -457,9 +457,9 @@ body {
   \*----------------------------*/
 
   #header {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #2B2D42;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #1E1F29;
     border-bottom: 3px solid #D10024;
   }
 
@@ -1848,7 +1848,7 @@ body {
   ===========================================================*/
 
   #footer {
-    background: #2B2D42;
+    background: #1E1F29;
     color: #B9BABC;
   }
 
