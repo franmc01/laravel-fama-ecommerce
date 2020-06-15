@@ -25,7 +25,7 @@
                 <div class="col-md-3">
                     <div class="header-logo">
                         <a href="{{ route('inicio.tienda') }}" class="logo">
-                            <img src="{{ asset('/img/lo1go.png') }}" alt="">
+                            <img height="70px" src="{{ asset('/img/lo1go.png') }}" alt="">
                         </a>
                     </div>
                 </div>
