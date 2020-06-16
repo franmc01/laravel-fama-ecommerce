@@ -79,7 +79,7 @@
                         <ul class="product-links">
                             <li><strong>Descripción:</strong></li>
                         </ul>
-                        <p style="text-align: justify">{!! $buscado->descripcion !!}</p>
+                        <p style="text-align: justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis facere eveniet pariatur reprehenderit explicabo ab provident praesentium beatae quis similique vero, cupiditate, sed, nisi repudiandae accusamus nesciunt porro placeat? Blanditiis!</p>
 
                         <ul class="product-links">
                             <li><strong>Categoria: </strong> <span> {{ $buscado->categoria->nombre_categoria }}</span> </li>
@@ -112,9 +112,31 @@
 					<!-- /Product details -->
 
                     <!-- Product tab -->
-                        <div class="col-md-12">
-                            <hr>
-                        </div>
+					<div class="col-md-12">
+						<div id="product-tab">
+							<!-- product tab nav -->
+							<ul class="tab-nav">
+								<li class="active"><a data-toggle="tab" href="#tab1">Caracteristicas</a></li>
+							</ul>
+							<!-- /product tab nav -->
+
+							<!-- product tab content -->
+							<div class="tab-content">
+								<!-- tab1  -->
+								<div id="tab1" class="tab-pane fade in active">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="container">
+                                                <p>{!! $buscado->descripcion !!}</p>
+                                            </div>
+										</div>
+									</div>
+								</div>
+								<!-- /tab1  -->
+							</div>
+							<!-- /product tab content  -->
+						</div>
+					</div>
 					<!-- /product tab -->
 
 				</div>
@@ -125,7 +147,7 @@
 		<!-- /SECTION -->
 
         <!-- Section -->
-        @if ($nuevo->isNotEmpty())
+        {{-- @if ($nuevo->isNotEmpty())
             <div class="section">
                 <!-- container -->
                 <div class="container">
@@ -182,7 +204,7 @@
                 </div>
                 <!-- /container -->
             </div>
-        @endif
+        @endif --}}
 
 		<!-- /Section -->
         <br> <br> <br> <br>
