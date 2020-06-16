@@ -79,7 +79,7 @@
                         <ul class="product-links">
                             <li><strong>Descripción:</strong></li>
                         </ul>
-                        <p style="text-align: justify">{{ $buscado->descripcion }}</p>
+                        <p style="text-align: justify">{!! $buscado->descripcion !!}</p>
 
                         <ul class="product-links">
                             <li><strong>Categoria: </strong> <span> {{ $buscado->categoria->nombre_categoria }}</span> </li>
