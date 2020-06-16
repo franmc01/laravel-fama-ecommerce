@@ -106,3 +106,4 @@ function calculo() {
 }
 
 
+CKEDITOR.replace( 'descripcion' );

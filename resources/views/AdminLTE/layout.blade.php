@@ -127,6 +127,7 @@
     <script src="{{ asset('/js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
     <script src="{{ asset('/js/myscript.js') }}"></script>
 
 </body>

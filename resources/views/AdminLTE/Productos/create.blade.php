@@ -55,7 +55,7 @@
 
                     <div class="form-group ">
                         <label for="">Descripción del Producto</label>
-                        <textarea type="text" rows="4" class="form-control @error('descripcion') is-invalid @enderror" name="descripcion" id="" placeholder="Ingrese la descripción">{{ old('descripcion') }}</textarea>
+                        <textarea  type="text" rows="4" class="form-control @error('descripcion') is-invalid @enderror" name="descripcion" id="" placeholder="Ingrese la descripción">{{ old('descripcion') }}</textarea>
                         @error('descripcion')
                         <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
                         @enderror
