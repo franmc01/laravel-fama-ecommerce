@@ -55,6 +55,14 @@
 
                     <div class="form-group ">
                         <label for="">Descripción del Producto</label>
+                        <textarea  type="text" rows="4" class="form-control @error('mini') is-invalid @enderror" name="mini" id="" placeholder="Ingrese la descripción">{{ old('mini') }}</textarea>
+                        @error('mini')
+                        <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
+                        @enderror
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="">Caracteristicas del Producto</label>
                         <textarea  type="text" rows="4" class="form-control @error('descripcion') is-invalid @enderror" name="descripcion" id="" placeholder="Ingrese la descripción">{{ old('descripcion') }}</textarea>
                         @error('descripcion')
                         <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
@@ -62,73 +70,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label> Selecciones las imagenes del producto </label>
-                        <input id="input-id" @error('imagenes') is-invalid @enderror name="imagenes[]" type="file" multiple>
-                        @error('imagenes')
+                        <label for="">Precio del producto</label>
+                        <input type="number" step="any" class="form-control @error('precio') is-invalid @enderror" name="precio" id="" value="{{ old('precio') }}" placeholder="Ingrese el precio del producto">
+                        @error('precio')
                         <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
                         @enderror
                     </div>
-
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card card-outline card-gray">
-                <div class="card-header text-center">
-                    <p style="text-transform: uppercase; font-weight:bold; font-size:16px">Información específica del producto</p>
-                </div>
-                <div class="card-body">
-
-                    <div class="form-group">
-                        <label>Marca del producto</label>
-                        <select name="marca" class="form-control marca @error('marca') is-invalid @enderror" style="width: 100%;">
-                            <option value="">Seleccione la marca</option>
-                            @foreach ($marcas as $item)
-                            <option value="{{ $item->id }}" {{ old('marca') == $item->id ? 'selected' : ''}}>{{ $item->nombre_sub }}</option>
-                            @endforeach
-                        </select>
-                        @error('marca')
-                        <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
-                        @enderror
-                    </div>
-                    <br>
-
-                    <div class="form-group">
-                        <label>Categoria del producto</label>
-                        <select id="categoria" name="categoria" class="form-control categoria @error('categoria') is-invalid @enderror" style="width: 100%;">
-                            <option value="">Seleccione una opción</option>
-                            @foreach ($categorias as $item)
-                            <option value="{{ $item->id }}" {{ old('categoria') == $item->id ? 'selected' : ''}}>{{ $item->nombre_categoria }}</option>
-                            @endforeach
-                        </select>
-                        @error('categoria')
-                        <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
-                        @enderror
-                    </div>
-                    <br>
-
-                    <div class="form-group">
-                        <label>Subcategoria general del producto</label>
-                        <select id="marca" name="subcategoria" class="form-control subcategoria @error('subcategoria') is-invalid @enderror" style="width: 100%;">
-                            <option value="">Seleccione una opción</option>
-                        </select>
-                        @error('subcategoria')
-                        <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
-                        @enderror
-                    </div>
-                    <br>
-
-                    <div class="form-group">
-                        <label>Subcategoria especifica del producto</label>
-                        <select id="submarca" name="subcategoria1" class="form-control subcategoria1 @error('subcategoria1') is-invalid @enderror" style="width: 100%;">
-                            <option value="">Seleccione una opción</option>
-                        </select>
-                        @error('subcategoria1')
-                        <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
-                        @enderror
-                    </div>
-                    <br>
 
                     <div class="bootstrap-timepicker">
                         <div class="form-group">
@@ -145,18 +92,74 @@
                         </div>
                         <!-- /.form group -->
                     </div>
-                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-outline card-gray">
+                <div class="card-header text-center">
+                    <p style="text-transform: uppercase; font-weight:bold; font-size:16px">Información específica del producto</p>
+                </div>
+                <div class="card-body">
 
                     <div class="form-group">
-                        <label for="">Precio del producto</label>
-                        <input type="number" step="any" class="form-control @error('precio') is-invalid @enderror" name="precio" id="" value="{{ old('precio') }}" placeholder="Ingrese el precio del producto">
-                        @error('precio')
+                        <label> Selecciones las imagenes del producto </label>
+                        <input id="input-id" @error('imagenes') is-invalid @enderror name="imagenes[]" type="file" multiple>
+                        @error('imagenes')
                         <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
                         @enderror
                     </div>
-                    <br>
 
-                    <button type="submit" class="btn btn-primary btn-block mb-3 mt-2">Registrar producto</button>
+                    <div class="form-group">
+                        <label>Marca del producto</label>
+                        <select name="marca" class="form-control marca @error('marca') is-invalid @enderror" style="width: 100%;">
+                            <option value="">Seleccione la marca</option>
+                            @foreach ($marcas as $item)
+                            <option value="{{ $item->id }}" {{ old('marca') == $item->id ? 'selected' : ''}}>{{ $item->nombre_sub }}</option>
+                            @endforeach
+                        </select>
+                        @error('marca')
+                        <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
+                        @enderror
+                    </div>
+<br>
+
+                    <div class="form-group">
+                        <label>Categoria del producto</label>
+                        <select id="categoria" name="categoria" class="form-control categoria @error('categoria') is-invalid @enderror" style="width: 100%;">
+                            <option value="">Seleccione una opción</option>
+                            @foreach ($categorias as $item)
+                            <option value="{{ $item->id }}" {{ old('categoria') == $item->id ? 'selected' : ''}}>{{ $item->nombre_categoria }}</option>
+                            @endforeach
+                        </select>
+                        @error('categoria')
+                        <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
+                        @enderror
+                    </div>
+<br>
+
+                    <div class="form-group">
+                        <label>Subcategoria general del producto</label>
+                        <select id="marca" name="subcategoria" class="form-control subcategoria @error('subcategoria') is-invalid @enderror" style="width: 100%;">
+                            <option value="">Seleccione una opción</option>
+                        </select>
+                        @error('subcategoria')
+                        <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
+                        @enderror
+                    </div>
+<br>
+
+                    <div class="form-group">
+                        <label>Subcategoria especifica del producto</label>
+                        <select id="submarca" name="subcategoria1" class="form-control subcategoria1 @error('subcategoria1') is-invalid @enderror" style="width: 100%;">
+                            <option value="">Seleccione una opción</option>
+                        </select>
+                        @error('subcategoria1')
+                        <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
+                        @enderror
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mb-3 mt-4">Registrar producto</button>
 
                 </div>
             </div>

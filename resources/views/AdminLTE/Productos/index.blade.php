@@ -58,7 +58,7 @@
                             <tr>
                                 <td>{{ $item->codigo_unico }}</td>
                                 <td>{{ $item->nombre_producto }}</td>
-                                <td>{{ $item->descripcion }}</td>
+                                <td>{{ $item->review }}</td>
                                 <td>{{ $item->subcategoria->nombre_sub }}</td>
                                 <td>{{ $item->categoria->nombre_categoria }}</td>
                                 <td>{{ $item->marca->nombre_marca }}</td>

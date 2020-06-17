@@ -50,6 +50,7 @@ class ProductoController extends Controller
     {
         $this->validate($request, [
             'nombre' => 'required',
+            'mini' => 'required',
             'descripcion' => 'required',
             'codigo' => 'required',
             'fecha' => 'required',
@@ -65,6 +66,7 @@ class ProductoController extends Controller
         $producto = new Producto();
         $producto->nombre_producto = $request->nombre;
         $producto->descripcion = $request->descripcion;
+        $producto->review = $request->mini;
         $producto->codigo_unico = $request->codigo;
         $producto->precio = $request->precio;
         $producto->publicado = Carbon::parse($request->fecha);
@@ -115,6 +117,7 @@ class ProductoController extends Controller
         $this->validate($request, [
             'nombre' => 'required',
             'descripcion' => 'required',
+            'mini' => 'required',
             'codigo' => 'required',
             'fecha' => 'required',
             'categoria' => 'required',
@@ -138,6 +141,7 @@ class ProductoController extends Controller
 
         $producto->nombre_producto = ucwords(strtolower($request->nombre));
         $producto->descripcion = $request->descripcion;
+        $producto->review = $request->mini;
         $producto->codigo_unico = $request->codigo;
         $producto->precio = $request->precio;
         $producto->publicado = Carbon::parse($request->fecha);

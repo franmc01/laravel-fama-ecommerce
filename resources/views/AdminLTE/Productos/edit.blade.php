@@ -21,9 +21,9 @@
 @section('content')
 
 @if (Session::has('success'))
-    <script>
-        Swal.fire( 'Genial!!' , 'Producto actualizado correctamente' , 'success' );
-    </script>
+<script>
+    Swal.fire('Genial!!', 'Producto actualizado correctamente', 'success');
+</script>
 @endif
 
 <form action="{{ route('productos.update', $editado) }}" method="post" enctype="multipart/form-data" class="responsive">
@@ -50,26 +50,46 @@
                         @error('nombre')
                         <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
                         @enderror
-
                     </div>
 
                     <div class="form-group ">
-                        <label for="">Descripción actual del producto</label>
-                        <textarea type="text" rows="4" class="form-control @error('descripcion') is-invalid @enderror" name="descripcion" id="" placeholder="Ingrese la descripción">{{ old('descripcion', $editado->descripcion) }}</textarea>
+                        <label for="">Descripción del Producto</label>
+                        <textarea type="text" rows="4" class="form-control @error('mini') is-invalid @enderror" name="mini">{{ old('mini',$editado->review) }}</textarea>
+                        @error('mini')
+                        <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
+                        @enderror
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="">Caracteristicas actuales del producto</label>
+                        <textarea type="text" rows="4" class="form-control @error('descripcion') is-invalid @enderror" name="descripcion">{{ old('descripcion', $editado->descripcion) }}</textarea>
                         @error('descripcion')
                         <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
                         @enderror
                     </div>
 
-
                     <div class="form-group">
-                        <label> <strong>Opcional:</strong> Seleccione nuevas imagenes del producto</label>
-                        <input id="input-id" @error('imagenes') is-invalid @enderror name="imagenes[]" type="file" multiple>
-                        @error('imagenes')
+                        <label for="">Precio del producto</label>
+                        <input type="number" step="any" class="form-control @error('precio') is-invalid @enderror" name="precio" id="" value="{{ old('precio',$editado->precio) }}" placeholder="Ingrese el precio del producto">
+                        @error('precio')
                         <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
                         @enderror
                     </div>
 
+                    <div class="bootstrap-timepicker mb-1">
+                        <div class="form-group">
+                            <label>Fecha de publicación:</label>
+                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                <input type="text" name="fecha" class="form-control @error('fecha') is-invalid @enderror datetimepicker-input" data-target="#reservationdate" value="{{ old('fecha', $editado->publicado) }}" />
+                                <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                            @error('fecha')
+                            <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
+                            @enderror
+                        </div>
+                    </div>
 
 
 
@@ -85,6 +105,14 @@
                     <p style="text-transform: uppercase; font-weight:bold; font-size:16px">Información específica del producto</p>
                 </div>
                 <div class="card-body">
+
+                    <div class="form-group">
+                        <label> <strong>Opcional:</strong> Seleccione nuevas imagenes del producto</label>
+                        <input id="input-id" @error('imagenes') is-invalid @enderror name="imagenes[]" type="file" multiple>
+                        @error('imagenes')
+                        <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
+                        @enderror
+                    </div>
 
                     <div class="form-group">
                         <label>Marca del producto</label>
@@ -126,8 +154,8 @@
                         <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
                         @enderror
                     </div>
-                    <br>
 
+                    <br>
                     <div class="form-group">
                         <label>Subcategoria especifica del producto</label>
                         <select id="submarca" name="subcategoria1" class="form-control subcategoria1 @error('subcategoria1') is-invalid @enderror" style="width: 100%;">
@@ -140,34 +168,7 @@
                         <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
                         @enderror
                     </div>
-                    <br>
-
-                    <div class="bootstrap-timepicker mb-1">
-                        <div class="form-group">
-                            <label>Fecha de publicación:</label>
-                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                <input type="text" name="fecha" class="form-control @error('fecha') is-invalid @enderror datetimepicker-input" data-target="#reservationdate" value="{{ old('fecha', $editado->publicado) }}" />
-                                <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
-                            @error('fecha')
-                            <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
-                            @enderror
-                        </div>
-                    </div>
-                    <br>
-
-                    <div class="form-group">
-                        <label for="">Precio del producto</label>
-                        <input type="number" step="any" class="form-control @error('precio') is-invalid @enderror" name="precio" id="" value="{{ old('precio',$editado->precio) }}" placeholder="Ingrese el precio del producto">
-                        @error('precio')
-                        <small id="helpId" class="text-muted"><strong class="text-danger">{{ $message }}</strong></small>
-                        @enderror
-                    </div>
-                    <br>
-
-                    <button type="submit" class="btn btn-primary btn-block mb-3 mt-2">Actualizar producto</button>
+                    <button type="submit" class="btn btn-primary btn-block mb-3 mt-4">Actualizar producto</button>
 
                 </div>
             </div>
