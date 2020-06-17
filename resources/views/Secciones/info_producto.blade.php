@@ -79,7 +79,7 @@
                         <ul class="product-links">
                             <li><strong>Descripción:</strong></li>
                         </ul>
-                        <p style="text-align: justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis facere eveniet pariatur reprehenderit explicabo ab provident praesentium beatae quis similique vero, cupiditate, sed, nisi repudiandae accusamus nesciunt porro placeat? Blanditiis!</p>
+                        <p style="text-align: justify">{{ $buscado->review }}</p>
 
                         <ul class="product-links">
                             <li><strong>Categoria: </strong> <span> {{ $buscado->categoria->nombre_categoria }}</span> </li>
@@ -101,12 +101,9 @@
                                 <hr>
                                 <br>
 
-                                    <a name="" id="" class="btn btn-danger" href="https://api.whatsapp.com/send?phone=593{{ $x[0]->telefono }}&text=Hola%20Distribuidora%20Fama,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20este%20producto%20,el%20c%C3%B3digo%20del%20mismo%20es:%20{{ $buscado->codigo_unico }}" ><i class="fa fa-shopping-cart"></i> Comprar</a>
+                                    <a class="btn btn-danger" href="https://api.whatsapp.com/send?phone=593{{ $x[0]->telefono }}&text=Hola%20Distribuidora%20Fama,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20este%20producto%20,el%20c%C3%B3digo%20del%20mismo%20es:%20{{ $buscado->codigo_unico }}"><i class="fa fa-shopping-cart"></i> Comprar</a>
 
                             </div>
-
-
-
 						</div>
 					</div>
 					<!-- /Product details -->
