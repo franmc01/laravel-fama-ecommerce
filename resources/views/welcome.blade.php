@@ -174,13 +174,13 @@
                             <div class="product">
                                 <div class="product-img">
                                     @if ($item->fotos->count() >= 1)
-                                    <a href="{{ route('info.producto', $item->id) }}"><img src="/storage/{{$item->fotos->first()->url }}" alt="Imagen del producto" height="200px" width="100px" style="object-fit: cover;"></a>
+                                    <a href="{{ route('info.producto', $item->id) }}"><img src="/storage/{{$item->fotos->first()->url }}" alt="Imagen del producto" height="200px" width="100px"></a>
                                     @endif
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">{{ $item->categoria->nombre_categoria }}</p>
+                                    <p class="product-category">{{ $item->subcategoria->nombre_sub }}</p>
                                     <h3 class="product-name"><a style="color: #333" href="{{ route('info.producto', $item->id) }}">{{ $item->nombre_producto }}</a></h3>
-                                    <h4 class="product-price">${{ $item->precio }}</h4>
+                                    <p style="font-size: 12px">{{ $item->review }}</p>
                                     <div class="product-rating"></div>
                                     <div class="product-btns">
                                         <a name="" id="" class=" btn add-to-cart-btn" href="https://api.whatsapp.com/send?phone=593{{ $x[0]->telefono }}&text=Hola%20Distribuidora%20Fama,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20este%20producto:%20{{$item->nombre_producto }}.%20El%20c%C3%B3digo%20del%20producto%20es:%20{{ $item->codigo_unico }}" role="button"><span style="padding-right: 10px"><i class="fa fa-shopping-cart"></i></span> Comprar</a>
