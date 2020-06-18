@@ -25,28 +25,30 @@
     <!-- NAVEGATION -->
     @if (!isset($mensaje))
     <!--carousel-->
-    <div class="historias">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                @foreach ($historias as $item)
-                <li data-target="#carousel-example-generic" data-slide-to="{{ $x->count() }}"></li>
-                @endforeach
-            </ol>
+    <div class="">
+        <div class="historias">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    @foreach ($historias as $item)
+                    <li data-target="#carousel-example-generic" data-slide-to="{{ $x->count() }}"></li>
+                    @endforeach
+                </ol>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="/img/123.jpg" alt="...">
-                    <div class="carousel-caption">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="/img/123.jpg" alt="...">
+                        <div class="carousel-caption">
+                        </div>
                     </div>
+                    @foreach ($historias as $item)
+                    <div class="item">
+                        <img src="/storage/{{ $item->banner }}" alt="...">
+                    </div>
+                    @endforeach
                 </div>
-                @foreach ($historias as $item)
-                <div class="item">
-                    <img src="/storage/{{ $item->banner }}" alt="...">
-                </div>
-                @endforeach
             </div>
         </div>
     </div>
