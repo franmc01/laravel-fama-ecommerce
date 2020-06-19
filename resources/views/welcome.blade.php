@@ -25,7 +25,6 @@
     <!-- NAVEGATION -->
     @if (!isset($mensaje))
     <!--carousel-->
-    <div class="">
         <div class="historias">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
@@ -51,7 +50,7 @@
                 </div>
             </div>
         </div>
-    </div>
+ 
     <!--carousel-->
 
     <!-- Sección del body -->
