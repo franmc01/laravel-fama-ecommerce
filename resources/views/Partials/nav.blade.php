@@ -1,4 +1,4 @@
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default misection">
 		    @if ($categorias->count()>8)
 		    <div class="container-fluid">
 		        @else
@@ -15,10 +15,10 @@
 
 		            <!-- Collect the nav links, forms, and other content for toggling -->
 		            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		                <ul class="nav navbar-nav">
-                            {{-- <li class="nav-item">
+		                <ul class="nav navbar-nav navbar-center">
+                            <li class="nav-item">
                                 <a href="{{ route('inicio.tienda') }}" class="nav-link active">Inicio</a>
-                            </li> --}}
+                            </li>
 		                    @foreach ($categorias as $item)
 		                    <li class="dropdown menu-large">
 		                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $item->nombre_categoria }} <span class="caret"></span></a>
@@ -37,7 +37,7 @@
 
 		                        </ul>
 		                    </li>
-		                    @endforeach
+                            @endforeach
 		                </ul>
 		            </div><!-- /.navbar-collapse -->
 		        </div><!-- /.container-fluid -->

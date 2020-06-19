@@ -14,7 +14,7 @@
   list-style: none;
 }
 .megamenu> li > ul > li > a {
-  display: block;
+  display: inline-block;
   padding: 3px 20px;
   clear: both;
   font-weight: normal;
@@ -69,12 +69,12 @@
 }
 
 .dropdown-menu{
-    padding-left: 65px;
+    padding-left: 80px;
 }
 
 .navbar-default{
     background: #FFF;
-    border-bottom: 2px solid #E4E7ED;
+    /* border-bottom: 2px solid #1d1e20; */
 
 }
 
@@ -83,5 +83,13 @@
 }
 
 .navbar{
+
      margin-bottom: 0px;
+}
+
+.misection .container {
+    width: auto !important;
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+
 }
