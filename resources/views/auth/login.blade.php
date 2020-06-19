@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
 </head>
-<body class="hold-transition login-page" style="background-image: url('/img/fondo.jpg');">
+<body class="hold-transition login-page">
 <div class="login-box">
   <!-- /.login-logo -->
   <div class="card" style="height: 350px">
