@@ -20,10 +20,10 @@
     <p class="text-muted text-center">ADMINISTRACIÓN</p>
   </div>
   <!-- /.login-logo -->
-  <div class="card">
+  <div class="card" style="height: 350px">
     <div class="card-body login-card-body">
       <p class="login-box-msg">
-          <img src="/img/logoa.png"  height="70px" style="padding-right: 30px">
+          <img src="{{ asset('/img/lo1go.png') }}"  height="70px" style="padding-right: 30px">
       </p>
 
       <form action="{{ route('login') }}" method="POST">
@@ -53,20 +53,13 @@
             </div>
           </div>
         </div>
+        <br>
         <div class="row">
-          <div class="col-7">
-            <div class="icheck-primary">
-                <input class="checkbox" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-              <label for="remember">
-                Recuérdame
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-5">
+          <div class="col-md-3"></div>
+          <div class="col-6">
             <button type="submit" class="btn btn-primary btn-block">Acceder</button>
           </div>
-          <!-- /.col -->
+          <div class="col-md-3"></div>
         </div>
       </form>
 
