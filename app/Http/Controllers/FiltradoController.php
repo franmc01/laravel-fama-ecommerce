@@ -44,7 +44,7 @@ class FiltradoController extends Controller
             'mensaje2' => "No se encontraron productos que coincidieran con el término: ' $termino '",
             'categorias' => Categoria::all(),
             'termino' => $termino,
-            'productos' => Producto::with('categoria', 'subcategoria', 'fotos')->NombreProducto($termino)->paginate(),
+            'productos' => Producto::with('categoria', 'subcategoria', 'fotos')->NombreProducto($termino)->Descripcion($termino)->paginate(),
             'x' => Informacion::all(),
         ]);
 

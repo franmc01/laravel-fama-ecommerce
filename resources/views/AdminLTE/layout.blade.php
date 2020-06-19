@@ -102,7 +102,7 @@
             <div class="float-right d-none d-sm-inline"> Version 1.0.1 </div>
             <strong>Copyright &copy; <script>
                     document.write(new Date().getFullYear());
-                </script> <a href="">Francisco Marin</a>.</strong>Todos los derechos reservados.
+                </script> <a href="">Angel Moreira y Francisco Marin</a>.</strong>Todos los derechos reservados.
         </footer>
 
     </div>

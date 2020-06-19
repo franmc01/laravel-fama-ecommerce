@@ -34,7 +34,13 @@ class Producto extends Model
     public function scopeNombreProducto($query, $nombre)
     {
         if ($nombre) {
-            return $query->where('nombre_producto', 'LIKE', "%$nombre%");
+            return $query->orwhere('nombre_producto', 'LIKE', "%$nombre%");
+        }
+    }
+    public function scopeDescripcion($query, $review)
+    {
+        if ($review) {
+            return $query->orwhere('review', 'LIKE', "%$review%");
         }
     }
 
