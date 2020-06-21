@@ -467,9 +467,9 @@ body {
     float: left;
   }
 
-  .header-logo .logo img {
+  .header-logo a img {
     display: block;
-    padding-top: 7px;
+    /* padding-bottom: 15px; */
   }
 
   /*----------------------------*\
@@ -477,7 +477,7 @@ body {
   \*----------------------------*/
 
   .header-search {
-    padding: 15px 0px;
+    padding: 20px 0px;
     padding-left: 8px;
   }
 
