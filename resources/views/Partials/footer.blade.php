@@ -1,6 +1,6 @@
 <footer id="footer">
     <!-- top footer -->
-    <div class="section">
+    <div class="section" style="padding-top: 0px; padding-bottom:0px;">
         <!-- container -->
         <div class="container">
             <!-- row -->
@@ -43,7 +43,7 @@
     <!-- /top footer -->
 
     <!-- bottom footer -->
-    <div id="bottom-footer" class="section">
+    <div id="bottom-footer" class="section" style="padding-top: 0px; padding-bottom: 10px;">
         <div class="container">
             <!-- row -->
             <div class="row">
