@@ -93,12 +93,7 @@ class MarcasTableSeeder extends Seeder
         $marca->save();
 
         $marca= new Marca();
-        $marca->nombre_marca='Equipos médicos';
-        $marca->categoria_id=5;
-        $marca->save();
-
-        $marca= new Marca();
-        $marca->nombre_marca='Complementos médicos';
+        $marca->nombre_marca='Ver lista medicina';
         $marca->categoria_id=5;
         $marca->save();
 
@@ -123,17 +118,7 @@ class MarcasTableSeeder extends Seeder
         $marca->save();
 
         $marca= new Marca();
-        $marca->nombre_marca='Útiles escolares';
-        $marca->categoria_id=7;
-        $marca->save();
-
-        $marca= new Marca();
-        $marca->nombre_marca='Textos escolares';
-        $marca->categoria_id=7;
-        $marca->save();
-
-        $marca= new Marca();
-        $marca->nombre_marca='Cuadernos';
+        $marca->nombre_marca='Ver lista libreria';
         $marca->categoria_id=7;
         $marca->save();
 

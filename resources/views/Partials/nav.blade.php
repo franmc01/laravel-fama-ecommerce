@@ -14,19 +14,19 @@
 		            <!-- Collect the nav links, forms, and other content for toggling -->
 		            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		                <ul class="nav navbar-nav navbar-center">
-                            <li class="nav-item">
-                                <a href="{{ route('inicio.tienda') }}" class="nav-link active">Inicio</a>
-                            </li>
+		                    <li class="nav-item">
+		                        <a href="{{ route('inicio.tienda') }}" class="nav-link active">Inicio</a>
+		                    </li>
 		                    @foreach ($categorias as $item)
+		                    @if ($item->marcas->count()<=1)
+		                    <li class="nav-item">
+		                        <a href="{{ route('filtro.categoria',  $item->nombre_categoria) }}" class="nav-link active">{{ $item->nombre_categoria }}</a>
+		                    </li>
+		                    @else
 		                    <li class="dropdown menu-large">
 		                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $item->nombre_categoria }} <span class="caret"></span></a>
 		                        <ul class="dropdown-menu megamenu row animate__animated animate__fadeIn">
-                                    @foreach ($item->marcas as $marcas)
-                                    {{-- @if ($marcas->count()=4)
-
-                                    @else
-                                    <li class="col-sm-2">
-                                    @endif --}}
+		                            @foreach ($item->marcas as $marcas)
 		                            <li class="col-sm-2">
 		                                <ul>
 		                                    <li class="dropdown-header">{{ $marcas->nombre_marca }}</li>
@@ -39,8 +39,10 @@
 		                            @endforeach
 
 		                        </ul>
+
 		                    </li>
-                            @endforeach
+		                    @endif
+		                    @endforeach
 		                </ul>
 		            </div><!-- /.navbar-collapse -->
 		        </div><!-- /.container-fluid -->

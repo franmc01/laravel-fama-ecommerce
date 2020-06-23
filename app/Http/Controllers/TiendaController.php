@@ -18,6 +18,7 @@ class TiendaController extends Controller
         return view('welcome', [
             'productos' => Producto::with('Categoria','Subcategoria','fotos')->paginate(8),
             'categorias' => Categoria::with('marcas')->orderBy('nombre_categoria','ASC')->get(),
+            'cantidad' => Categoria::with('marcas')->count(),
             'chunk' => $favoritas->take(4),
             'x'=> Informacion::all(),
             'historias' => Banner::get()
