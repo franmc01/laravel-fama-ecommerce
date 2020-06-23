@@ -23,7 +23,12 @@ class SubmarcasTableSeeder extends Seeder
         $sub->save();
 
         $sub = new Submarca();
-        $sub->nombre_submarca = 'Vitrinas y minibares';
+        $sub->nombre_submarca = 'Vitrinas';
+        $sub->marca_id = 1;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Minibares';
         $sub->marca_id = 1;
         $sub->save();
 
@@ -49,6 +54,11 @@ class SubmarcasTableSeeder extends Seeder
 
         $sub = new Submarca();
         $sub->nombre_submarca = 'Acondicionadores de aire de ventana';
+        $sub->marca_id = 3;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Acondicionadores de aire portátil';
         $sub->marca_id = 3;
         $sub->save();
 
@@ -172,10 +182,6 @@ class SubmarcasTableSeeder extends Seeder
         $sub->marca_id = 9;
         $sub->save();
 
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Bicicletas montañeras';
-        $sub->marca_id = 9;
-        $sub->save();
 
         $sub = new Submarca();
         $sub->nombre_submarca = 'Bicicletas BMX';
@@ -298,190 +304,173 @@ class SubmarcasTableSeeder extends Seeder
         $sub->save();
 
         $sub = new Submarca();
-        $sub->nombre_submarca = 'Tensiometro';
-        $sub->marca_id = 16;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Glucometro';
-        $sub->marca_id = 16;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Torniquete';
-        $sub->marca_id = 16;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Venda de yeso';
-        $sub->marca_id = 17;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Espaladrapos';
-        $sub->marca_id = 17;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Batas quirurgicas';
-        $sub->marca_id = 17;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Gorros quirurgicos';
-        $sub->marca_id = 17;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'De sobremesa o escritorio';
-        $sub->marca_id = 18;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Laptops';
-        $sub->marca_id = 18;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Tablets';
-        $sub->marca_id = 18;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Baterías y Accesorios';
-        $sub->marca_id = 19;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Celulares y Smartphones';
-        $sub->marca_id = 19;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Teléfonos convencionales';
-        $sub->marca_id = 19;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Impresoras Multifunción';
-        $sub->marca_id = 20;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Cartuchos y Tintas';
-        $sub->marca_id = 20;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Smartwatch';
-        $sub->marca_id = 21;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Cámaras';
-        $sub->marca_id = 21;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Mochilas';
-        $sub->marca_id = 22;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Loncheras';
-        $sub->marca_id = 22;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Cartucheras - Multiusos';
-        $sub->marca_id = 22;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Esferos y lápices';
-        $sub->marca_id = 22;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Calculadoras';
-        $sub->marca_id = 22;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Ver disponibles';
-        $sub->marca_id = 23;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Cuaderno cuadriculado';
-        $sub->marca_id = 24;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Cuaderno de líneas';
-        $sub->marca_id = 24;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Cuaderno de dibujo';
-        $sub->marca_id = 24;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Cuadernos forrados';
-        $sub->marca_id = 24;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Cuadernos anillados';
-        $sub->marca_id = 24;
-        $sub->save();
-
-
-        $sub = new Submarca();
         $sub->nombre_submarca = 'Andadores';
-        $sub->marca_id = 25;
-        $sub->save();
-
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Coches';
-        $sub->marca_id = 25;
+        $sub->marca_id = 16;
         $sub->save();
 
         $sub = new Submarca();
         $sub->nombre_submarca = 'Correpasillos';
+        $sub->marca_id = 16;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Corrales';
+        $sub->marca_id = 16;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Canguros para bebés';
+        $sub->marca_id = 16;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Pañaleras';
+        $sub->marca_id = 16;
+        $sub->save();
+
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Tensiometro';
+        $sub->marca_id = 17;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Glucometro';
+        $sub->marca_id = 17;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Torniquete';
+        $sub->marca_id = 17;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Venda de yeso';
+        $sub->marca_id = 18;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Espaladrapos';
+        $sub->marca_id = 18;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Batas quirurgicas';
+        $sub->marca_id = 18;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Gorros quirurgicos';
+        $sub->marca_id = 18;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'De sobremesa o escritorio';
+        $sub->marca_id = 19;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Laptops';
+        $sub->marca_id = 19;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Tablets';
+        $sub->marca_id = 19;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Baterías y Accesorios';
+        $sub->marca_id = 20;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Celulares y Smartphones';
+        $sub->marca_id = 20;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Teléfonos convencionales';
+        $sub->marca_id = 20;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Impresoras Multifunción';
+        $sub->marca_id = 21;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Cartuchos y Tintas';
+        $sub->marca_id = 21;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Smartwatch';
+        $sub->marca_id = 22;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Cámaras';
+        $sub->marca_id = 22;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Mochilas';
+        $sub->marca_id = 23;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Loncheras';
+        $sub->marca_id = 23;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Cartucheras - Multiusos';
+        $sub->marca_id = 23;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Esferos y lápices';
+        $sub->marca_id = 23;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Calculadoras';
+        $sub->marca_id = 23;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Ver disponibles';
+        $sub->marca_id = 24;
+        $sub->save();
+
+        $sub = new Submarca();
+        $sub->nombre_submarca = 'Cuaderno cuadriculado';
         $sub->marca_id = 25;
         $sub->save();
 
         $sub = new Submarca();
-        $sub->nombre_submarca = 'Mosquiteros para coches de bebé';
+        $sub->nombre_submarca = 'Cuaderno de líneas';
         $sub->marca_id = 25;
         $sub->save();
 
         $sub = new Submarca();
-        $sub->nombre_submarca = 'Pañaleras y más';
+        $sub->nombre_submarca = 'Cuaderno de dibujo';
         $sub->marca_id = 25;
         $sub->save();
 
         $sub = new Submarca();
-        $sub->nombre_submarca = 'Bolsas de lego de construcción';
-        $sub->marca_id = 26;
+        $sub->nombre_submarca = 'Cuadernos forrados';
+        $sub->marca_id = 25;
         $sub->save();
 
         $sub = new Submarca();
-        $sub->nombre_submarca = 'Carros a control remoto';
-        $sub->marca_id = 26;
+        $sub->nombre_submarca = 'Cuadernos anillados';
+        $sub->marca_id = 25;
         $sub->save();
 
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Juguetes';
-        $sub->marca_id = 26;
-        $sub->save();
 
-        $sub = new Submarca();
-        $sub->nombre_submarca = 'Sonajeros y maracas';
-        $sub->marca_id = 26;
-        $sub->save();
+
 
 
     }

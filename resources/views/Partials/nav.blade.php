@@ -21,8 +21,13 @@
 		                    <li class="dropdown menu-large">
 		                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $item->nombre_categoria }} <span class="caret"></span></a>
 		                        <ul class="dropdown-menu megamenu row animate__animated animate__fadeIn">
-		                            @foreach ($item->marcas as $marcas)
-		                            <li class="col-sm-4">
+                                    @foreach ($item->marcas as $marcas)
+                                    {{-- @if ($marcas->count()=4)
+
+                                    @else
+                                    <li class="col-sm-2">
+                                    @endif --}}
+		                            <li class="col-sm-2">
 		                                <ul>
 		                                    <li class="dropdown-header">{{ $marcas->nombre_marca }}</li>
 		                                    @foreach ($marcas->submarca as $item)

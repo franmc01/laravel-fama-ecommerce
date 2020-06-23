@@ -25,7 +25,7 @@ class CategoriasTableSeeder extends Seeder
         $cate->save();
 
         $cate = new Categoria();
-        $cate->nombre_categoria= 'Hogar';
+        $cate->nombre_categoria= 'Hogar y bebés';
         $cate->save();
 
         $cate = new Categoria();
@@ -40,8 +40,6 @@ class CategoriasTableSeeder extends Seeder
         $cate->nombre_categoria= 'Librería y oficina';
         $cate->save();
 
-        $cate = new Categoria();
-        $cate->nombre_categoria= 'Niños';
-        $cate->save();
+
     }
 }

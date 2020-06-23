@@ -88,6 +88,11 @@ class MarcasTableSeeder extends Seeder
         $marca->save();
 
         $marca= new Marca();
+        $marca->nombre_marca='Carriolas y accesorios';
+        $marca->categoria_id=4;
+        $marca->save();
+
+        $marca= new Marca();
         $marca->nombre_marca='Equipos médicos';
         $marca->categoria_id=5;
         $marca->save();
@@ -132,14 +137,6 @@ class MarcasTableSeeder extends Seeder
         $marca->categoria_id=7;
         $marca->save();
 
-        $marca= new Marca();
-        $marca->nombre_marca='Carriolas y accesorios';
-        $marca->categoria_id=8;
-        $marca->save();
 
-        $marca= new Marca();
-        $marca->nombre_marca='Juguetes y coleccionables';
-        $marca->categoria_id=8;
-        $marca->save();
     }
 }
