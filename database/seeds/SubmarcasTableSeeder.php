@@ -385,7 +385,7 @@ class SubmarcasTableSeeder extends Seeder
         $sub->save();
 
         $sub = new Submarca();
-        $sub->nombre_submarca = 'Libreria';
+        $sub->nombre_submarca = 'Toda la libreria';
         $sub->marca_id = 22;
         $sub->save();
 
