@@ -110,7 +110,7 @@
 
                 <!-- shop -->
                 <div class="col-md-3 col-xs-6">
-                    <div class="shop">
+                    <div class="shop" style="height: 175px">
                         <div class="shop-img">
                             <img src="{{ asset('/img/grupo3.jpg') }}" alt="">
                         </div>
@@ -147,8 +147,8 @@
                         @if ($productos->isEmpty())
                         @if (isset($mensaje))
                         <h4>{{ $mensaje }}</h4>
-                        @else
-                        <h4 class="title">Listado completo de los productos</h4>
+                        {{-- @else
+                        <h4 class="title">Listado completo de los productos</h4> --}}
                         @endif
                         @endif
                     </div>
