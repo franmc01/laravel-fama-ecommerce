@@ -23,6 +23,43 @@
 		                        <a href="{{ route('filtro.categoria',  $item->nombre_categoria) }}" class="nav-link active">{{ $item->nombre_categoria }}</a>
 		                    </li>
 		                    @else
+		                    @if ($item->marcas->count()==3)
+		                    <li class="dropdown menu-large">
+		                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $item->nombre_categoria }} <span class="caret"></span></a>
+		                        <ul class="dropdown-menu megamenu row animate__animated animate__fadeIn">
+		                            @foreach ($item->marcas as $marcas)
+		                            <li class="col-sm-4">
+		                                <ul>
+		                                    <li class="dropdown-header">{{ $marcas->nombre_marca }}</li>
+		                                    @foreach ($marcas->submarca as $item)
+		                                    <li><a href="{{ route('filtro.marca',  $item) }}">{{ $item->nombre_submarca }}</a></li>
+		                                    @endforeach
+		                                    <br>
+		                                </ul>
+		                            </li>
+		                            @endforeach
+		                        </ul>
+		                    </li>
+		                    @else
+		                    @if ($item->marcas->count()==4)
+		                    <li class="dropdown menu-large">
+		                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $item->nombre_categoria }} <span class="caret"></span></a>
+		                        <ul class="dropdown-menu megamenu row animate__animated animate__fadeIn">
+		                            @foreach ($item->marcas as $marcas)
+		                            <li class="col-sm-3">
+		                                <ul>
+		                                    <li class="dropdown-header">{{ $marcas->nombre_marca }}</li>
+		                                    @foreach ($marcas->submarca as $item)
+		                                    <li><a href="{{ route('filtro.marca',  $item) }}">{{ $item->nombre_submarca }}</a></li>
+		                                    @endforeach
+		                                    <br>
+		                                </ul>
+		                            </li>
+		                            @endforeach
+		                        </ul>
+		                    </li>
+                            @else
+		                    @if ($item->marcas->count()>4)
 		                    <li class="dropdown menu-large">
 		                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $item->nombre_categoria }} <span class="caret"></span></a>
 		                        <ul class="dropdown-menu megamenu row animate__animated animate__fadeIn">
@@ -37,13 +74,16 @@
 		                                </ul>
 		                            </li>
 		                            @endforeach
-
 		                        </ul>
-
 		                    </li>
-		                    @endif
+                            @endif
+                            @endif
+                            @endif
+                            @endif
 		                    @endforeach
 		                </ul>
 		            </div><!-- /.navbar-collapse -->
 		        </div><!-- /.container-fluid -->
 		</nav>
+
+
