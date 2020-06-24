@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
- 
+
     <!--carousel-->
 
     <!-- Sección del body -->
@@ -162,7 +162,8 @@
                         @if ($productos->isEmpty())
                         @if (isset($mensaje2))
                         <div class="jumbotron jumbotron-fluid">
-                            <div class="container">
+                            <div class="container" >
+                                <img class="center-block" style="padding-bottom: 5px"  src="{{ '/img/nada.png' }}" alt="" height="50px">
                                 <h5 class="text-center">{{ $mensaje2 }}</h5>
                             </div>
                         </div>
