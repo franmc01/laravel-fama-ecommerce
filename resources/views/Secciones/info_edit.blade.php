@@ -1,4 +1,4 @@
-@extends('AdminLTE\layout')
+@extends('AdminLTE.layout')
 
 @section('header')
 

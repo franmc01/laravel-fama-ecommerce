@@ -32,11 +32,11 @@
 </head>
 <body>
     <!-- HEADER -->
-    @include('Partials\header')
+    @include('Partials.header')
     <!-- HEADER -->
 
     <!-- NAVEGATION -->
-    @include('Partials\nav')
+    @include('Partials.nav')
     <!-- NAVEGATION -->
 
 
@@ -207,7 +207,7 @@
         <br> <br> <br> <br>
 
 		<!-- FOOTER -->
-        @include('Partials\footer')
+        @include('Partials.footer')
 		<!-- /FOOTER -->
 
 		<!-- jQuery Plugins -->
