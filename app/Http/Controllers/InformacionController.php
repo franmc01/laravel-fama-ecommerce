@@ -16,7 +16,7 @@ class InformacionController extends Controller
     public function editar_info()
     {
         $edicion=Informacion::all();
-        return view('Secciones\info_edit',compact('edicion'));
+        return view('Secciones.info_edit',compact('edicion'));
     }
 
 
@@ -58,13 +58,13 @@ class InformacionController extends Controller
         $c=Categoria::all()->count();
         $d=Marca::all()->count();
 
-        return view('Secciones\dashboard', compact('a','b','c','d'));
+        return view('Secciones.dashboard', compact('a','b','c','d'));
 
     }
 
     public function eliminados(){
         $datos = Producto::onlyTrashed()->get();
-        return view('Secciones\eliminados', compact('datos'));
+        return view('Secciones.eliminados', compact('datos'));
     }
 
     public function restaurar($id){

@@ -11,7 +11,7 @@ class BannerController extends Controller
     public function index()
     {
         $b = Banner::all();
-        return view('AdminLTE\Banners\banner', compact('b'));
+        return view('AdminLTE.Banners.banner', compact('b'));
     }
 
     public function store(Request $request)

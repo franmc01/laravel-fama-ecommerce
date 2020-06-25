@@ -29,7 +29,7 @@ class TiendaController extends Controller
     public function informacion($id)
     {
         $today= Carbon::now()->subWeek(1)->toDateString();
-        return view('Secciones\info_producto', [
+        return view('Secciones.info_producto', [
             'categorias' => Categoria::orderBy('nombre_categoria','ASC')->get(),
             'buscado' => Producto::with('categoria','subcategoria','fotos')->find($id),
             'nuevo' => Producto::with('categoria','subcategoria','fotos')->where('publicado', '>=' , $today )->get(),

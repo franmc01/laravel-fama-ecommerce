@@ -102,7 +102,7 @@ class ProductoController extends Controller
         $subcat1 = Submarca::all();
 
         $editado = Producto::with('categoria', 'subcategoria', 'fotos')->find($producto->id);
-        return view('AdminLTE\Productos\edit', compact('editado', 'marcas', 'categorias', 'subcat', 'subcat1'));
+        return view('AdminLTE.Productos.edit', compact('editado', 'marcas', 'categorias', 'subcat', 'subcat1'));
     }
 
     /**
