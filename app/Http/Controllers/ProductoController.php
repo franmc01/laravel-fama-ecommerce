@@ -146,7 +146,7 @@ class ProductoController extends Controller
         $producto->precio = $request->precio;
         $producto->publicado = Carbon::parse($request->fecha);
         $producto->categoria_id = Categoria::find($cat = $request->categoria) ? ucwords(strtolower($cat)) : Categoria::create(['nombre_categoria' => ucwords(strtolower($cat))])->id;
-        $producto->subcategoria_id = SubCategoria::find($sub = $request->marca) ? ucwords(strtolower($sub)) : SubCategoria::create(['nombre_sub' => ucwords(strtolower($sub))])->id;
+        $producto->subcategoria_id = SubCategoria::find($sub = $request->marca) ? $sub : SubCategoria::create(['nombre_sub' => $sub ])->id;
         $producto->marca_id = $y = Marca::find($marca = $request->subcategoria) ? ucwords(strtolower($marca)) : $y = Marca::create(['nombre_marca' => ucwords(strtolower($marca)), 'categoria_id' => $producto->categoria_id])->id;
         $producto->submarca_id = Submarca::find($smarca = $request->subcategoria1) ? ucwords(strtolower($smarca)) : Submarca::create(['nombre_submarca' => ucwords(strtolower($smarca)), 'marca_id' => $y])->id;
         $url = route('productos.edit', $producto);
