@@ -212,7 +212,7 @@
 
 
     <!-- FOOTER -->
-    @include('Partials\footer')
+    @include('Partials.footer')
     <!-- /FOOTER -->
 
     <!-- jQuery Plugins -->
