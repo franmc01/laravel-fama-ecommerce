@@ -23,7 +23,7 @@ class ProductoController extends Controller
     public function index()
     {
         $datos = Producto::with('categoria', 'marca', 'fotos', 'subcategoria', 'submarca')->get();
-        return view('AdminLTE\Productos\index', compact('datos'));
+        return view('AdminLTE.Productos.index', compact('datos'));
     }
 
     /**
@@ -37,7 +37,7 @@ class ProductoController extends Controller
         $categorias = Categoria::all();
         $subcat = Marca::all();
         $subcat1 = Submarca::all();
-        return view('AdminLTE\Productos\create', compact('marcas', 'categorias', 'subcat', 'subcat1'));
+        return view('AdminLTE.Productos.create', compact('marcas', 'categorias', 'subcat', 'subcat1'));
     }
 
     /**
