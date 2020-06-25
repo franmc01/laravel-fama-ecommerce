@@ -17,11 +17,11 @@
 </head>
 <body>
     <!-- HEADER -->
-    @include('Partials\header')
+    @include('Partials.header')
     <!-- HEADER -->
 
     <!-- NAVEGATION -->
-    @include('Partials\nav')
+    @include('Partials.nav')
     <!-- NAVEGATION -->
     @if (!isset($mensaje))
     <!--carousel-->
