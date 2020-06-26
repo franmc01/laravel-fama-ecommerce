@@ -37,6 +37,4 @@ class TiendaController extends Controller
         ]);
     }
 
-
-
 }
