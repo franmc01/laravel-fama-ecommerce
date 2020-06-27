@@ -12,7 +12,7 @@
     <link type="text/css" rel="stylesheet" href="/css/nouislider.min.css" />
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="/css/estilos.css" />
-    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 </head>
 <body>
@@ -221,7 +221,6 @@
     <script src="{{ asset('/js/slick.min.js') }}"></script>
     <script src="{{ asset('/js/nouislider.min.js') }}"></script>
     <script src="{{ asset('/js/jquery.zoom.min.js') }}"></script>
-    {{-- <script src="{{ asset('/js/myscript.js') }}"></script> --}}
     <script src="{{ asset('/js/script.js') }}"></script>
 </body>
 </html>
