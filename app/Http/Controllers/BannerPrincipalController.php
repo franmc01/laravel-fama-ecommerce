@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BannerPrincipalController extends Controller
 {
@@ -13,7 +15,8 @@ class BannerPrincipalController extends Controller
      */
     public function index()
     {
-        return view('AdminLTE.Banners.bprincipal');
+        $b = Banner::where('principal', 1)->get();
+        return view('AdminLTE.Banners.bprincipal', compact('b'));
     }
 
     /**
@@ -34,7 +37,12 @@ class BannerPrincipalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, ['inputb1' => 'required']);
+        $fotos = new Banner();
+        $fotos->banner = $request->file('inputb1')->store('banner');
+        $fotos->principal = 1;
+        $fotos->save();
+        return back()->with('success', 'Las fotos ha sido registradas correctamente');
     }
 
     /**

@@ -30,7 +30,7 @@
 
 
 <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-8">
         <div class="card card-outline card-gray">
             <div class="card-body">
                 <form method="POST" action="{{ route('crear.banner') }}" enctype="multipart/form-data">
@@ -49,7 +49,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-4">
         <div class="card card-outline card-gray">
             <div class="card-body">
                 <div class="form-group">

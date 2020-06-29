@@ -10,7 +10,7 @@ class BannerController extends Controller
 {
     public function index()
     {
-        $b = Banner::all();
+        $b = Banner::where('principal', null)->get();
         return view('AdminLTE.Banners.banner', compact('b'));
     }
 
