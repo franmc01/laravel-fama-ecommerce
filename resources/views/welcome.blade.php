@@ -25,31 +25,38 @@
     <!-- NAVEGATION -->
     @if (!isset($mensaje))
     <!--carousel-->
-        <div class="historias">
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    @foreach ($historias as $item)
-                    <li data-target="#carousel-example-generic" data-slide-to="{{ $x->count() }}"></li>
-                    @endforeach
-                </ol>
+    @if ($historias->isNotEmpty())
+    <div class="historias">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                @foreach ($historias as $item)
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="/img/123.jpg" alt="...">
-                        <div class="carousel-caption">
-                        </div>
-                    </div>
-                    @foreach ($historias as $item)
-                    <div class="item">
-                        <img src="/storage/{{ $item->banner }}" alt="...">
-                    </div>
-                    @endforeach
+                @if ($item->principal == 1)
+                <li data-target="#carousel-example-generic" data-slide-to="{{ $x->count() }}" class="active"></li>
+                @else
+                <li data-target="#carousel-example-generic" data-slide-to="{{ $x->count() }}"></li>
+                @endif
+                @endforeach
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                @foreach ($historias as $item)
+                @if ($item->principal == 1)
+                <div class="item active">
+                    <img src="/storage/{{ $item->banner }}" alt="...">
                 </div>
+                @else
+                <div class="item">
+                    <img src="/storage/{{ $item->banner }}" alt="...">
+                </div>
+                @endif
+                @endforeach
             </div>
         </div>
+    </div>
+    @endif
 
     <!--carousel-->
 
@@ -162,8 +169,8 @@
                         @if ($productos->isEmpty())
                         @if (isset($mensaje2))
                         <div class="jumbotron jumbotron-fluid">
-                            <div class="container" >
-                                <img class="center-block" style="padding-bottom: 5px"  src="{{ '/img/nada.png' }}" alt="" height="50px">
+                            <div class="container">
+                                <img class="center-block" style="padding-bottom: 5px" src="{{ '/img/nada.png' }}" alt="" height="50px">
                                 <h5 class="text-center">{{ $mensaje2 }}</h5>
                             </div>
                         </div>

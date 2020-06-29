@@ -21,7 +21,7 @@ class TiendaController extends Controller
             'cantidad' => Categoria::with('marcas')->count(),
             'chunk' => $favoritas->take(4),
             'x'=> Informacion::all(),
-            'historias' => Banner::get()
+            'historias' => Banner::all()
         ]);
     }
 
