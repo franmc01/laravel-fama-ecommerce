@@ -22,7 +22,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/informacion-pagina/actualizar/{id}', 'InformacionController@update_info')->name('info.update');
     Route::get('/productos-eliminados', 'InformacionController@eliminados')->name('productos.eliminados');
     Route::get('/restaurar/{x}', 'InformacionController@restaurar')->name('restaurar');
-    Route::get('/banner', 'BannerController@index')->name('inicio.banner');
+    Route::get('/banner-ofertas', 'BannerController@index')->name('inicio.banner');
+    Route::get('/banner-principal', 'BannerPrincipalController@index')->name('inicio.pbanner');
+
     Route::post('/banner-crear', 'BannerController@store')->name('crear.banner');
     Route::delete('/elimnar-foto/{foto}', 'FiltradoController@eliminar_foto')->name('eliminar.xfoto');
     Route::delete('/fotos/{foto}', 'BannerController@destroy')->name('eliminar.banner');

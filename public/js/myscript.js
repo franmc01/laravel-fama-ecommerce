@@ -48,6 +48,32 @@ $("#input-id").fileinput({
     }
 });
 
+$("#input-b1").fileinput({
+    'browseOnZoneClick': true,
+    'theme': 'fas',
+    browseClass: "btn btn-dark",
+    showCaption: true,
+    showRemove: true,
+    showUpload: false,
+    allowedFileTypes: ["image"],
+    browseLabel: 'Selecione la imagen del banner',
+    removeLabel: 'Eliminar',
+    dragTitle: 'Mueva o seleccione',
+    dropZoneTitle: 'Arrastre y suelte aquí los archivos &hellip;',
+    dropZoneClickTitle: '<br>(o haga clic para seleccionar {files})',
+    msgZoomModalHeading: 'Vista previa detallada',
+    msgInvalidFileType: 'Tipo de archivo no válido para "{name}". Sólpermiten archivos de tipo "{types}".',
+    msgInvalidFileExtension: 'Extensión de archivo no válida para "{name}". se permiten archivos "{extensions}".',
+    previewZoomButtonTitles: {
+        prev: 'Anterior',
+        next: 'Siguiente',
+        toggleheader: 'Mostrar encabezado',
+        fullscreen: 'Pantalla completa',
+        borderless: 'Modo sin bordes',
+        close: 'Cerrar vista detallada'
+    }
+});
+
 $(document).ready(function() {
     $('#categoria').on('change',function(e) {
         e.preventDefault();

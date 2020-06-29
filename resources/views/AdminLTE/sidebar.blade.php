@@ -57,11 +57,28 @@
         </ul>
     </li>
 
-        <li class="nav-item">
-            <a href="{{ route('inicio.banner') }}" class="nav-link">
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-audio-description"></i>
-                <p>Banner</p>
+                <p>Adm. de los banner<i class="right fas fa-angle-left"></i> </p>
             </a>
+
+            <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                    <a href="{{ route('inicio.pbanner') }}" class="nav-link">
+                        <i class="nav-icon fa fa-audio-description"></i>
+                        <p>Banner principal</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('inicio.banner') }}" class="nav-link">
+                        <i class="nav-icon fa fa-audio-description"></i>
+                        <p>Banner de ofertas</p>
+                    </a>
+                </li>
+
+            </ul>
         </li>
 
 
